@@ -10,9 +10,6 @@ namespace COVIDVACCSYSTEM.View
             InitializeComponent();
         }
 
-        private void CitizenRegistration_Load(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
+       
     }
 }

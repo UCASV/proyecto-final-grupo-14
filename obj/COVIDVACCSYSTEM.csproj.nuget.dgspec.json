@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\SINAVACC-19\\COVIDVACCSYSTEM\\COVIDVACCSYSTEM.csproj": {}
+    "C:\\Users\\EdwinMa\\Desktop\\proyecto-final-grupo-14\\COVIDVACCSYSTEM.csproj": {}
   },
   "projects": {
-    "C:\\SINAVACC-19\\COVIDVACCSYSTEM\\COVIDVACCSYSTEM.csproj": {
+    "C:\\Users\\EdwinMa\\Desktop\\proyecto-final-grupo-14\\COVIDVACCSYSTEM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SINAVACC-19\\COVIDVACCSYSTEM\\COVIDVACCSYSTEM.csproj",
+        "projectUniqueName": "C:\\Users\\EdwinMa\\Desktop\\proyecto-final-grupo-14\\COVIDVACCSYSTEM.csproj",
         "projectName": "COVIDVACCSYSTEM",
-        "projectPath": "C:\\SINAVACC-19\\COVIDVACCSYSTEM\\COVIDVACCSYSTEM.csproj",
-        "packagesPath": "C:\\Users\\aligr\\.nuget\\packages\\",
-        "outputPath": "C:\\SINAVACC-19\\COVIDVACCSYSTEM\\obj\\",
+        "projectPath": "C:\\Users\\EdwinMa\\Desktop\\proyecto-final-grupo-14\\COVIDVACCSYSTEM.csproj",
+        "packagesPath": "C:\\Users\\EdwinMa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\EdwinMa\\Desktop\\proyecto-final-grupo-14\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\aligr\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\EdwinMa\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows"
@@ -71,7 +71,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

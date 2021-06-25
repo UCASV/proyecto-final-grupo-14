@@ -307,7 +307,7 @@ namespace COVIDVACCSYSTEM.View
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CitizenRegistration";
-            this.Load += new System.EventHandler(this.CitizenRegistration_Load);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
         }
