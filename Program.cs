@@ -16,7 +16,6 @@ namespace COVIDVACCSYSTEM
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ManagerLogIn());
-            Application.Run(new MainWindow());
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace COVIDVACCSYSTEM.View
 {
@@ -37,55 +38,96 @@ namespace COVIDVACCSYSTEM.View
             this.UsernameLbl = new System.Windows.Forms.Label();
             this.PasswordLbl = new System.Windows.Forms.Label();
             this.LogInButton = new System.Windows.Forms.Button();
+            this.CabinIdLbl = new System.Windows.Forms.Label();
+            this.CabinTB = new System.Windows.Forms.TextBox();
+            this.EmployeeIdLbl = new System.Windows.Forms.Label();
+            this.EmployeeIdTB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // UsernameTB
             // 
-            this.UsernameTB.Location = new System.Drawing.Point(402, 456);
+            this.UsernameTB.Location = new System.Drawing.Point(430, 484);
             this.UsernameTB.Margin = new System.Windows.Forms.Padding(4);
             this.UsernameTB.Name = "UsernameTB";
-            this.UsernameTB.Size = new System.Drawing.Size(229, 32);
+            this.UsernameTB.Size = new System.Drawing.Size(206, 32);
             this.UsernameTB.TabIndex = 0;
             // 
             // PasswordTB
             // 
-            this.PasswordTB.Location = new System.Drawing.Point(402, 496);
+            this.PasswordTB.Location = new System.Drawing.Point(430, 524);
             this.PasswordTB.Margin = new System.Windows.Forms.Padding(4);
             this.PasswordTB.Name = "PasswordTB";
             this.PasswordTB.PasswordChar = '*';
-            this.PasswordTB.Size = new System.Drawing.Size(229, 32);
+            this.PasswordTB.Size = new System.Drawing.Size(206, 32);
             this.PasswordTB.TabIndex = 1;
             this.PasswordTB.UseSystemPasswordChar = true;
             // 
             // UsernameLbl
             // 
-            this.UsernameLbl.Location = new System.Drawing.Point(291, 456);
+            this.UsernameLbl.Location = new System.Drawing.Point(319, 484);
             this.UsernameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UsernameLbl.Name = "UsernameLbl";
-            this.UsernameLbl.Size = new System.Drawing.Size(103, 32);
+            this.UsernameLbl.Size = new System.Drawing.Size(80, 30);
             this.UsernameLbl.TabIndex = 2;
             this.UsernameLbl.Text = "Usuario";
             this.UsernameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PasswordLbl
             // 
-            this.PasswordLbl.Location = new System.Drawing.Point(291, 496);
+            this.PasswordLbl.Location = new System.Drawing.Point(319, 524);
             this.PasswordLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PasswordLbl.Name = "PasswordLbl";
-            this.PasswordLbl.Size = new System.Drawing.Size(103, 32);
+            this.PasswordLbl.Size = new System.Drawing.Size(80, 30);
             this.PasswordLbl.TabIndex = 3;
             this.PasswordLbl.Text = "Clave";
             this.PasswordLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // LogInButton
             // 
-            this.LogInButton.Location = new System.Drawing.Point(384, 556);
+            this.LogInButton.Location = new System.Drawing.Point(419, 588);
             this.LogInButton.Margin = new System.Windows.Forms.Padding(4);
             this.LogInButton.Name = "LogInButton";
-            this.LogInButton.Size = new System.Drawing.Size(177, 61);
+            this.LogInButton.Size = new System.Drawing.Size(105, 37);
             this.LogInButton.TabIndex = 4;
             this.LogInButton.Text = "Ingresar";
             this.LogInButton.UseVisualStyleBackColor = true;
+            this.LogInButton.Click += new System.EventHandler(this.LogInButton_Click);
+            // 
+            // CabinIdLbl
+            // 
+            this.CabinIdLbl.Location = new System.Drawing.Point(296, 445);
+            this.CabinIdLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CabinIdLbl.Name = "CabinIdLbl";
+            this.CabinIdLbl.Size = new System.Drawing.Size(103, 32);
+            this.CabinIdLbl.TabIndex = 6;
+            this.CabinIdLbl.Text = "Cabina";
+            this.CabinIdLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CabinTB
+            // 
+            this.CabinTB.Location = new System.Drawing.Point(430, 445);
+            this.CabinTB.Name = "CabinTB";
+            this.CabinTB.Size = new System.Drawing.Size(94, 32);
+            this.CabinTB.TabIndex = 7;
+            // 
+            // EmployeeIdLbl
+            // 
+            this.EmployeeIdLbl.BackColor = System.Drawing.Color.Transparent;
+            this.EmployeeIdLbl.Location = new System.Drawing.Point(531, 444);
+            this.EmployeeIdLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EmployeeIdLbl.Name = "EmployeeIdLbl";
+            this.EmployeeIdLbl.Size = new System.Drawing.Size(46, 30);
+            this.EmployeeIdLbl.TabIndex = 10;
+            this.EmployeeIdLbl.Text = "ID";
+            this.EmployeeIdLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // EmployeeIdTB
+            // 
+            this.EmployeeIdTB.Location = new System.Drawing.Point(585, 444);
+            this.EmployeeIdTB.Margin = new System.Windows.Forms.Padding(4);
+            this.EmployeeIdTB.Name = "EmployeeIdTB";
+            this.EmployeeIdTB.Size = new System.Drawing.Size(51, 32);
+            this.EmployeeIdTB.TabIndex = 9;
             // 
             // ManagerLogIn
             // 
@@ -95,6 +137,10 @@ namespace COVIDVACCSYSTEM.View
             this.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(948, 662);
+            this.Controls.Add(this.EmployeeIdLbl);
+            this.Controls.Add(this.EmployeeIdTB);
+            this.Controls.Add(this.CabinTB);
+            this.Controls.Add(this.CabinIdLbl);
             this.Controls.Add(this.LogInButton);
             this.Controls.Add(this.PasswordLbl);
             this.Controls.Add(this.UsernameLbl);
@@ -114,11 +160,14 @@ namespace COVIDVACCSYSTEM.View
             this.PerformLayout();
         }
 
-        private System.Windows.Forms.Button LogInButton;
 
+        private System.Windows.Forms.Label EmployeeIdLbl;
+        private System.Windows.Forms.TextBox EmployeeIdTB;
+        private TextBox CabinTB;
+        private System.Windows.Forms.Label CabinIdLbl;
+        private System.Windows.Forms.Button LogInButton;
         private System.Windows.Forms.Label UsernameLbl;
         private System.Windows.Forms.Label PasswordLbl;
-
         private System.Windows.Forms.TextBox UsernameTB;
         private System.Windows.Forms.TextBox PasswordTB;
 
