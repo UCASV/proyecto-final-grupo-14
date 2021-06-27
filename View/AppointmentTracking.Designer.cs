@@ -183,6 +183,7 @@ namespace COVIDVACCSYSTEM.View
             this.PrintButton.TabIndex = 8;
             this.PrintButton.Text = "Imprimir";
             this.PrintButton.UseVisualStyleBackColor = false;
+            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
             // AppointmentTracking
             // 

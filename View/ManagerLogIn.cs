@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Globalization;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 
@@ -21,70 +20,72 @@ namespace COVIDVACCSYSTEM.View
         {
             try
             {
-               _sqlConnection.Open();
-               
-               string cmd = "SELECT username, userpassword FROM LOGIN_INFO WHERE username = '"+UsernameTB.Text+"' AND userpassword = '"+PasswordTB.Text+"'";
+                _sqlConnection.Open();
 
-               _sqlCommand = new SqlCommand(cmd, _sqlConnection);
-               _sqlReader = _sqlCommand.ExecuteReader();
+                string cmd = "SELECT username, userpassword FROM LOGIN_INFO WHERE username = '" + UsernameTB.Text +
+                             "' AND userpassword = '" + PasswordTB.Text + "'";
 
-               if (_sqlReader.HasRows)
-               {
-                   Form mainWindow = new MainWindow();
-                   this.Hide();
-                   mainWindow.Show();
-                   
-               }
-               else
-               {
-                   MessageBox.Show("Datos de inicio de sesión incorrectos. Intentelo de nuevo", 
-                       "INICIO DE SESIÓN INVÁLIDO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               }
-               
-               _sqlConnection.Close();
+                _sqlCommand = new SqlCommand(cmd, _sqlConnection);
+                _sqlReader = _sqlCommand.ExecuteReader();
 
+                if (_sqlReader.HasRows)
+                {
+                    Form mainWindow = new MainWindow();
+                    LoginRecordSaver();
+                    this.Hide();
+                    mainWindow.Show();
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Datos de inicio de sesión incorrectos. Intentelo de nuevo",
+                        "INICIO DE SESIÓN INVÁLIDO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception loginException)
-            { 
-                MessageBox.Show(loginException.ToString());
+            {
+                MessageBox.Show("Error al iniciar sesión. Contacte con el departamento de informática",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
+            }
+            finally
+            {
+                _sqlConnection.Close();
             }
             
         }
 
-        private void NewLoginRecord()
+        private void LoginRecordSaver()
         {
-            _sqlConnection.Open();
-            var recordQuery = "INSERT INTO LOGIN_RECORD (employee_id, cabin_id, login_time) VALUES (@employee_id, @cabin_id, @login_time)";
-            _sqlCommand.Parameters.Add("@employee_id", SqlDbType.Int);
-            _sqlCommand.Parameters["employee_id"].Value = Int32.Parse(EmployeeIdTB.Text);
-            _sqlCommand.Parameters.Add("@cabin_id", SqlDbType.Int);
-            _sqlCommand.Parameters["cabin_id"].Value = Int32.Parse(CabinTB.Text);
-            _sqlCommand.Parameters.Add("@login_time", SqlDbType.DateTime);
-            _sqlCommand.Parameters["login_time"].Value = DateTime.Now;
-            _sqlCommand = new SqlCommand(recordQuery, _sqlConnection);
-            _sqlCommand.ExecuteNonQuery();
-            _sqlReader = _sqlCommand.ExecuteReader();
-            
-
-            if (_sqlReader.HasRows)
+            try
             {
-                MessageBox.Show($"Bienvenid@", "REGISTRO DE INICIO DE SESION", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                _sqlConnection.Open();
+                _sqlCommand = new SqlCommand("NewLoginRecord", _sqlConnection);
+                _sqlCommand.CommandType = CommandType.StoredProcedure;
+                SqlParameter employeeParameter = new SqlParameter("@employee_id", SqlDbType.Int);
+                _sqlCommand.Parameters.Add(employeeParameter).Value = Int32.Parse(EmployeeIdTB.Text);
+                SqlParameter cabinParameter = new SqlParameter("@cabin_id", SqlDbType.Int);
+                _sqlCommand.Parameters.Add(cabinParameter).Value = Int32.Parse(CabinTB.Text);
+                SqlParameter timeParameter = new SqlParameter("@login_time", SqlDbType.DateTime);
+                _sqlCommand.Parameters.Add(timeParameter).Value = DateTime.Now;
+                _sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error al iniciar sesión. Contacte con el departamento de informática",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
                 _sqlConnection.Close();
-            }
-            else
-            {
-                MessageBox.Show("Error al registrar inicio de sesión", "REGISTRO DE INICIO DE SESION", MessageBoxButtons.OK, 
-                    MessageBoxIcon.Error);    
-            }
+            } 
         }
         
         private void LogInButton_Click(object sender, EventArgs e)
         {
             ManagerLogin();
-            NewLoginRecord();
         }
+        
 
       
     }
