@@ -20,8 +20,7 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
         public int SideEffectsId { get; set; }
 
         public virtual SideEffect SideEffects { get; set; }
+        public virtual VaccinationAppointment VaccApp { get; set; }
         public virtual ICollection<Employeexprocess> Employeexprocesses { get; set; }
-        
-        
     }
 }

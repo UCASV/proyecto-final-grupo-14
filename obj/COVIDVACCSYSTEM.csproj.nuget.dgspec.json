@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Documents\\ProyectoFinalPOOxBDD\\proyecto-final-grupo-14\\COVIDVACCSYSTEM.csproj": {}
+    "C:\\proyecto-final-grupo-14\\COVIDVACCSYSTEM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Documents\\ProyectoFinalPOOxBDD\\proyecto-final-grupo-14\\COVIDVACCSYSTEM.csproj": {
+    "C:\\proyecto-final-grupo-14\\COVIDVACCSYSTEM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Documents\\ProyectoFinalPOOxBDD\\proyecto-final-grupo-14\\COVIDVACCSYSTEM.csproj",
+        "projectUniqueName": "C:\\proyecto-final-grupo-14\\COVIDVACCSYSTEM.csproj",
         "projectName": "COVIDVACCSYSTEM",
-        "projectPath": "C:\\Users\\USER\\Documents\\ProyectoFinalPOOxBDD\\proyecto-final-grupo-14\\COVIDVACCSYSTEM.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Documents\\ProyectoFinalPOOxBDD\\proyecto-final-grupo-14\\obj\\",
+        "projectPath": "C:\\proyecto-final-grupo-14\\COVIDVACCSYSTEM.csproj",
+        "packagesPath": "C:\\Users\\aligr\\.nuget\\packages\\",
+        "outputPath": "C:\\proyecto-final-grupo-14\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\aligr\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows"
@@ -51,6 +51,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.7, )"
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.2, )"
             }
           },
           "imports": [
