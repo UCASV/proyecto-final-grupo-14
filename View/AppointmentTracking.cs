@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 
@@ -33,7 +34,10 @@ namespace COVIDVACCSYSTEM.View
             try
             {
                 _sqlConnection.Open();
+
                 string searchCitizen = "SELECT CITIZEN.dui AS DUI, first_name AS 'NOMBRES', last_name AS 'APELLIDOS', birthday AS 'FECHA DE NACIMIENTO', email AS 'CORREO ELECTRONICO', CITY.city_name AS 'CIUDAD DE ORIGEN', INSTITUTION.institution_name AS 'INSTITUCION' FROM CITIZEN, CITY, INSTITUTION WHERE dui = '"+DUITB.Text+"' AND CITIZEN.city_id = CITY.id AND CITIZEN.institution_id = INSTITUTION.id";
+
+
                 string searchAppointment = "SELECT id AS 'ID DE CITA', app_date AS 'FECHA', app_time AS 'HORA', cabin_id AS 'CABINA' FROM VACCINATION_APPOINTMENT WHERE citizen_id = '"+DUITB.Text+"'";
                 SqlDataAdapter sqlAdapter1 = new SqlDataAdapter(searchCitizen, _sqlConnection);
                 SqlDataAdapter sqlAdapter2 = new SqlDataAdapter(searchAppointment, _sqlConnection);
@@ -56,6 +60,7 @@ namespace COVIDVACCSYSTEM.View
             }
         }
 
+
         private void PrintButton_Click(object sender, EventArgs e)
         {
           PdfPTable pdfTable = new PdfPTable(CitizenDGV.ColumnCount);
@@ -73,7 +78,7 @@ namespace COVIDVACCSYSTEM.View
                 pdfTable.AddCell(cell);
             }
  
-        
+
             foreach (DataGridViewRow row in CitizenDGV.Rows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
@@ -82,6 +87,7 @@ namespace COVIDVACCSYSTEM.View
                 }
             }
  
+
             PdfPTable pdfTable2 = new PdfPTable(AppointmentsDGV.ColumnCount);
             pdfTable2.DefaultCell.Padding = 3;
             pdfTable2.WidthPercentage = 50;
@@ -105,11 +111,14 @@ namespace COVIDVACCSYSTEM.View
 
             string folderPath = "C:\\PDFs\\";
             string citizenId = DUITB.Text;
+
             if (!Directory.Exists(folderPath))
             {
                 Directory.CreateDirectory(folderPath);
             }
+
             using (FileStream stream = new FileStream(folderPath + citizenId +".pdf", FileMode.Create))
+
             {
                 Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
                 PdfWriter.GetInstance(pdfDoc, stream);
@@ -122,6 +131,9 @@ namespace COVIDVACCSYSTEM.View
 
             MessageBox.Show("El archivo se encuentra ubicado en carpeta PDFs en disco local", "GUARDADO",
                 MessageBoxButtons.OK);
+
+
+            }
 
         }
     }

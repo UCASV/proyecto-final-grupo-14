@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace COVIDVACCSYSTEM.View
 {
@@ -38,7 +39,7 @@ namespace COVIDVACCSYSTEM.View
             this.PasswordLbl = new System.Windows.Forms.Label();
             this.LogInButton = new System.Windows.Forms.Button();
             this.CabinIdLbl = new System.Windows.Forms.Label();
-            this.CabinCB = new System.Windows.Forms.ComboBox();
+            this.CabinTB = new System.Windows.Forms.TextBox();
             this.EmployeeIdLbl = new System.Windows.Forms.Label();
             this.EmployeeIdTB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -102,13 +103,12 @@ namespace COVIDVACCSYSTEM.View
             this.CabinIdLbl.Text = "Cabina";
             this.CabinIdLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // CabinCB
+            // CabinTB
             // 
-            this.CabinCB.FormattingEnabled = true;
-            this.CabinCB.Location = new System.Drawing.Point(430, 445);
-            this.CabinCB.Name = "CabinCB";
-            this.CabinCB.Size = new System.Drawing.Size(94, 31);
-            this.CabinCB.TabIndex = 7;
+            this.CabinTB.Location = new System.Drawing.Point(430, 445);
+            this.CabinTB.Name = "CabinTB";
+            this.CabinTB.Size = new System.Drawing.Size(94, 32);
+            this.CabinTB.TabIndex = 7;
             // 
             // EmployeeIdLbl
             // 
@@ -139,7 +139,7 @@ namespace COVIDVACCSYSTEM.View
             this.ClientSize = new System.Drawing.Size(948, 662);
             this.Controls.Add(this.EmployeeIdLbl);
             this.Controls.Add(this.EmployeeIdTB);
-            this.Controls.Add(this.CabinCB);
+            this.Controls.Add(this.CabinTB);
             this.Controls.Add(this.CabinIdLbl);
             this.Controls.Add(this.LogInButton);
             this.Controls.Add(this.PasswordLbl);
@@ -160,19 +160,14 @@ namespace COVIDVACCSYSTEM.View
             this.PerformLayout();
         }
 
+
         private System.Windows.Forms.Label EmployeeIdLbl;
         private System.Windows.Forms.TextBox EmployeeIdTB;
-
-        
-
-        private System.Windows.Forms.ComboBox CabinCB;
-
+        private TextBox CabinTB;
         private System.Windows.Forms.Label CabinIdLbl;
         private System.Windows.Forms.Button LogInButton;
-
         private System.Windows.Forms.Label UsernameLbl;
         private System.Windows.Forms.Label PasswordLbl;
-
         private System.Windows.Forms.TextBox UsernameTB;
         private System.Windows.Forms.TextBox PasswordTB;
 
