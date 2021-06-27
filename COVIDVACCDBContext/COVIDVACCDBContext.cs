@@ -462,9 +462,9 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
 
                 entity.Property(e => e.SideEffectsId).HasColumnName("side_effects_id");
 
-                entity.Property(e => e.VaccAppId).HasColumnName("vacc_app_id");
+                entity.Property(e => e.VaccinationAppId).HasColumnName("vacc_app_id");
 
-                entity.Property(e => e.VaccTime).HasColumnName("vacc_time");
+                entity.Property(e => e.VaccinationTime).HasColumnName("vacc_time");
 
                 entity.HasOne(d => d.SideEffects)
                     .WithMany(p => p.VaccinationProcesses)

@@ -35,44 +35,77 @@ namespace COVIDVACCSYSTEM.View
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            bool verify = DuiTB.Text.Length == 8;
 
-            City _city = (City) CityCB.SelectedItem;
+            bool verify = DuiTB.Text.Length == 8;
+            
 
             if (verify)
             {
-                Citizen newCitizen = new Citizen
+                var _context = new COVIDVACCDBContext.COVIDVACCDBContext();
+
+                City citychosen = new City();
+                citychosen.Id = ((City) CityCB.SelectedItem).Id;
+                City dbcity = _context.Set<City>().SingleOrDefault(c => c.Id == citychosen.Id);
+
+                Institution instchosen = new Institution();
+                instchosen.Id = ((Institution) InstitutionCB.SelectedItem).Id;
+                Institution dbinst = _context.Set<Institution>().SingleOrDefault(i => i.Id == instchosen.Id);
+
+               
+                var newCitizen = new Citizen
                 {
                     FirstName = FirstNameTB.Text,
                     LastName = LastNameTB.Text,
                     Dui = DuiTB.Text,
                     Email = EmailTB.Text,
-                    InstitutionId = InstitutionCB.SelectedIndex,
+                    City = dbcity,
                     Birthday = BirthdayDTP.Value,
-                    CityId = CityCB.SelectedIndex
+                    Institution = dbinst
+                   
                 };
-                
-                
-                citizen.Create(newCitizen);
 
+                _context.Add(newCitizen);
+                
                 CitizenPhoneNumber phone = new CitizenPhoneNumber
                 {
                     PhoneNumber = PhoneNumberTB.Text,
-                    CitizenId = newCitizen.FirstName
+                    Citizen = newCitizen
                 };
-                
-                phonenum.Create(phone);
 
+                _context.Add(phone);
+                
                 foreach (DataRowView illness in ailmentLB.Items)
                 {
                     Ailment ailments = new Ailment
                     {
-                        IllnessId = ailmentLB.SelectedIndex,
-                        CitizenId = newCitizen.Dui
-                    };
+                        Citizen = newCitizen, ChronicIllnes chro = new ChronicIllnes();
+                                                                     chro = _context.ChronicIllnesses.FirstOrDefault(c => c.Id == ailmentLB.SelectedIndex);
+                       
+                        Illness = chro;
+                    }
+                    ailments.Citizen = cit;
+
+                    
                     
                     ailm.Create(ailments);
                 }
+                /*citicon.Citizens.Add(newCitizen);
+                inst.Citizens.Add(newCitizen);
+                _context.Update(citicon);*/
+                
+                //dbcity.Citizens.Add(newCitizen);
+                //dbins.Citizens.Add(newCitizen);
+                _context.SaveChanges();
+
+               
+                
+
+                //Citizen cit = _context.Citizens.FirstOrDefault(c => c.Dui == newCitizen.Dui);
+                //phone.Citizen = cit;
+                
+                
+
+                
                 
                 MessageBox.Show("Ciudadano creado exitosamente", "Ciudadano creado", MessageBoxButtons.OK);
             }

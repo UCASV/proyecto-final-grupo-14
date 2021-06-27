@@ -61,7 +61,7 @@ namespace COVIDVACCSYSTEM.View
             this.FirstNameLbl.BackColor = System.Drawing.Color.Transparent;
             this.FirstNameLbl.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.FirstNameLbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.FirstNameLbl.Location = new System.Drawing.Point(98, 99);
+            this.FirstNameLbl.Location = new System.Drawing.Point(124, 99);
             this.FirstNameLbl.Name = "FirstNameLbl";
             this.FirstNameLbl.Size = new System.Drawing.Size(150, 39);
             this.FirstNameLbl.TabIndex = 0;
@@ -73,7 +73,7 @@ namespace COVIDVACCSYSTEM.View
             this.LastNameLbl.BackColor = System.Drawing.Color.Transparent;
             this.LastNameLbl.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.LastNameLbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.LastNameLbl.Location = new System.Drawing.Point(411, 99);
+            this.LastNameLbl.Location = new System.Drawing.Point(448, 99);
             this.LastNameLbl.Name = "LastNameLbl";
             this.LastNameLbl.Size = new System.Drawing.Size(150, 39);
             this.LastNameLbl.TabIndex = 1;
@@ -97,7 +97,7 @@ namespace COVIDVACCSYSTEM.View
             this.AddressLbl.BackColor = System.Drawing.Color.Transparent;
             this.AddressLbl.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.AddressLbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.AddressLbl.Location = new System.Drawing.Point(247, 241);
+            this.AddressLbl.Location = new System.Drawing.Point(247, 275);
             this.AddressLbl.Name = "AddressLbl";
             this.AddressLbl.Size = new System.Drawing.Size(150, 39);
             this.AddressLbl.TabIndex = 3;
@@ -109,7 +109,7 @@ namespace COVIDVACCSYSTEM.View
             this.PhoneNumberLbl.BackColor = System.Drawing.Color.Transparent;
             this.PhoneNumberLbl.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.PhoneNumberLbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.PhoneNumberLbl.Location = new System.Drawing.Point(248, 346);
+            this.PhoneNumberLbl.Location = new System.Drawing.Point(248, 420);
             this.PhoneNumberLbl.Name = "PhoneNumberLbl";
             this.PhoneNumberLbl.Size = new System.Drawing.Size(150, 39);
             this.PhoneNumberLbl.TabIndex = 4;
@@ -121,7 +121,7 @@ namespace COVIDVACCSYSTEM.View
             this.EmailLbl.BackColor = System.Drawing.Color.Transparent;
             this.EmailLbl.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.EmailLbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.EmailLbl.Location = new System.Drawing.Point(247, 308);
+            this.EmailLbl.Location = new System.Drawing.Point(247, 361);
             this.EmailLbl.Name = "EmailLbl";
             this.EmailLbl.Size = new System.Drawing.Size(199, 39);
             this.EmailLbl.TabIndex = 5;
@@ -133,7 +133,7 @@ namespace COVIDVACCSYSTEM.View
             this.IllnessLbl.BackColor = System.Drawing.Color.Transparent;
             this.IllnessLbl.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.IllnessLbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.IllnessLbl.Location = new System.Drawing.Point(246, 463);
+            this.IllnessLbl.Location = new System.Drawing.Point(248, 558);
             this.IllnessLbl.Name = "IllnessLbl";
             this.IllnessLbl.Size = new System.Drawing.Size(201, 49);
             this.IllnessLbl.TabIndex = 6;
@@ -145,7 +145,7 @@ namespace COVIDVACCSYSTEM.View
             this.InstitutionLbl.BackColor = System.Drawing.Color.Transparent;
             this.InstitutionLbl.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.InstitutionLbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.InstitutionLbl.Location = new System.Drawing.Point(246, 386);
+            this.InstitutionLbl.Location = new System.Drawing.Point(248, 485);
             this.InstitutionLbl.Name = "InstitutionLbl";
             this.InstitutionLbl.Size = new System.Drawing.Size(150, 39);
             this.InstitutionLbl.TabIndex = 7;
@@ -157,7 +157,7 @@ namespace COVIDVACCSYSTEM.View
             this.FirstNameTB.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FirstNameTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FirstNameTB.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.FirstNameTB.Location = new System.Drawing.Point(55, 141);
+            this.FirstNameTB.Location = new System.Drawing.Point(81, 141);
             this.FirstNameTB.Name = "FirstNameTB";
             this.FirstNameTB.Size = new System.Drawing.Size(252, 28);
             this.FirstNameTB.TabIndex = 8;
@@ -166,7 +166,7 @@ namespace COVIDVACCSYSTEM.View
             // LastNameTB
             // 
             this.LastNameTB.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.LastNameTB.Location = new System.Drawing.Point(356, 141);
+            this.LastNameTB.Location = new System.Drawing.Point(393, 141);
             this.LastNameTB.Name = "LastNameTB";
             this.LastNameTB.Size = new System.Drawing.Size(250, 28);
             this.LastNameTB.TabIndex = 9;
@@ -188,7 +188,7 @@ namespace COVIDVACCSYSTEM.View
             // 
             this.DepartmentCB.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.DepartmentCB.FormattingEnabled = true;
-            this.DepartmentCB.Location = new System.Drawing.Point(465, 241);
+            this.DepartmentCB.Location = new System.Drawing.Point(465, 275);
             this.DepartmentCB.Name = "DepartmentCB";
             this.DepartmentCB.Size = new System.Drawing.Size(250, 29);
             this.DepartmentCB.TabIndex = 11;
@@ -199,7 +199,7 @@ namespace COVIDVACCSYSTEM.View
             // 
             this.CityCB.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.CityCB.FormattingEnabled = true;
-            this.CityCB.Location = new System.Drawing.Point(465, 271);
+            this.CityCB.Location = new System.Drawing.Point(465, 305);
             this.CityCB.Name = "CityCB";
             this.CityCB.Size = new System.Drawing.Size(250, 29);
             this.CityCB.TabIndex = 12;
@@ -208,7 +208,7 @@ namespace COVIDVACCSYSTEM.View
             // EmailTB
             // 
             this.EmailTB.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.EmailTB.Location = new System.Drawing.Point(465, 318);
+            this.EmailTB.Location = new System.Drawing.Point(465, 371);
             this.EmailTB.Name = "EmailTB";
             this.EmailTB.Size = new System.Drawing.Size(250, 28);
             this.EmailTB.TabIndex = 13;
@@ -216,7 +216,7 @@ namespace COVIDVACCSYSTEM.View
             // PhoneNumberTB
             // 
             this.PhoneNumberTB.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.PhoneNumberTB.Location = new System.Drawing.Point(465, 352);
+            this.PhoneNumberTB.Location = new System.Drawing.Point(465, 430);
             this.PhoneNumberTB.Name = "PhoneNumberTB";
             this.PhoneNumberTB.Size = new System.Drawing.Size(250, 28);
             this.PhoneNumberTB.TabIndex = 14;
@@ -225,9 +225,9 @@ namespace COVIDVACCSYSTEM.View
             // 
             this.InstitutionCB.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.InstitutionCB.FormattingEnabled = true;
-            this.InstitutionCB.Location = new System.Drawing.Point(465, 386);
+            this.InstitutionCB.Location = new System.Drawing.Point(467, 485);
             this.InstitutionCB.Name = "InstitutionCB";
-            this.InstitutionCB.Size = new System.Drawing.Size(250, 29);
+            this.InstitutionCB.Size = new System.Drawing.Size(248, 29);
             this.InstitutionCB.TabIndex = 16;
             // 
             // TitleLbl
@@ -245,9 +245,9 @@ namespace COVIDVACCSYSTEM.View
             // InstitutionTB
             // 
             this.InstitutionTB.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.InstitutionTB.Location = new System.Drawing.Point(465, 416);
+            this.InstitutionTB.Location = new System.Drawing.Point(467, 515);
             this.InstitutionTB.Name = "InstitutionTB";
-            this.InstitutionTB.Size = new System.Drawing.Size(250, 28);
+            this.InstitutionTB.Size = new System.Drawing.Size(248, 28);
             this.InstitutionTB.TabIndex = 18;
             // 
             // RegisterButton
@@ -257,7 +257,7 @@ namespace COVIDVACCSYSTEM.View
             this.RegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisterButton.Font = new System.Drawing.Font("Bahnschrift", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.RegisterButton.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (218)))), ((int) (((byte) (218)))), ((int) (((byte) (218)))));
-            this.RegisterButton.Location = new System.Drawing.Point(393, 632);
+            this.RegisterButton.Location = new System.Drawing.Point(393, 648);
             this.RegisterButton.Name = "RegisterButton";
             this.RegisterButton.Size = new System.Drawing.Size(165, 37);
             this.RegisterButton.TabIndex = 19;
@@ -268,7 +268,7 @@ namespace COVIDVACCSYSTEM.View
             // DuiTB
             // 
             this.DuiTB.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.DuiTB.Location = new System.Drawing.Point(656, 141);
+            this.DuiTB.Location = new System.Drawing.Point(682, 141);
             this.DuiTB.Name = "DuiTB";
             this.DuiTB.Size = new System.Drawing.Size(250, 28);
             this.DuiTB.TabIndex = 20;
@@ -278,7 +278,7 @@ namespace COVIDVACCSYSTEM.View
             this.duiLbl.BackColor = System.Drawing.Color.Transparent;
             this.duiLbl.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.duiLbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.duiLbl.Location = new System.Drawing.Point(706, 99);
+            this.duiLbl.Location = new System.Drawing.Point(732, 99);
             this.duiLbl.Name = "duiLbl";
             this.duiLbl.Size = new System.Drawing.Size(150, 39);
             this.duiLbl.TabIndex = 21;
@@ -289,15 +289,15 @@ namespace COVIDVACCSYSTEM.View
             // 
             this.ailmentLB.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.ailmentLB.ColumnWidth = 250;
-            this.ailmentLB.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.ailmentLB.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.ailmentLB.FormattingEnabled = true;
-            this.ailmentLB.HorizontalScrollbar = true;
-            this.ailmentLB.ItemHeight = 20;
-            this.ailmentLB.Location = new System.Drawing.Point(465, 459);
+            this.ailmentLB.ItemHeight = 21;
+            this.ailmentLB.Location = new System.Drawing.Point(465, 554);
+            this.ailmentLB.MultiColumn = true;
             this.ailmentLB.Name = "ailmentLB";
             this.ailmentLB.ScrollAlwaysVisible = true;
             this.ailmentLB.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.ailmentLB.Size = new System.Drawing.Size(250, 124);
+            this.ailmentLB.Size = new System.Drawing.Size(465, 88);
             this.ailmentLB.TabIndex = 22;
             // 
             // CitizenRegistration
@@ -341,22 +341,37 @@ namespace COVIDVACCSYSTEM.View
         }
 
         private System.Windows.Forms.ListBox ailmentLB;
+
+        private System.Windows.Forms.ListBox listBox1;
+
         private System.Windows.Forms.TextBox DuiTB;
         private System.Windows.Forms.Label duiLbl;
+
         private System.Windows.Forms.Button RegisterButton;
+
         private System.Windows.Forms.TextBox InstitutionTB;
+
         private System.Windows.Forms.Label TitleLbl;
+
         private System.Windows.Forms.ComboBox InstitutionCB;
+
+
         private System.Windows.Forms.TextBox EmailTB;
         private System.Windows.Forms.TextBox PhoneNumberTB;
+
         private System.Windows.Forms.ComboBox DepartmentCB;
         private System.Windows.Forms.ComboBox CityCB;
+
         private System.Windows.Forms.DateTimePicker BirthdayDTP;
+
         private System.Windows.Forms.TextBox FirstNameTB;
         private System.Windows.Forms.TextBox LastNameTB;
+
         private System.Windows.Forms.Label IllnessLbl;
         private System.Windows.Forms.Label InstitutionLbl;
+
         private System.Windows.Forms.Label EmailLbl;
+
         private System.Windows.Forms.Label FirstNameLbl;
         private System.Windows.Forms.Label LastNameLbl;
         private System.Windows.Forms.Label BirthdayLbl;
