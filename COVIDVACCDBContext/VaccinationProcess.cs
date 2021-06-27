@@ -21,7 +21,5 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
 
         public virtual SideEffect SideEffects { get; set; }
         public virtual ICollection<Employeexprocess> Employeexprocesses { get; set; }
-        
-        
     }
 }

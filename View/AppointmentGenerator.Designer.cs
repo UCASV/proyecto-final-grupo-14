@@ -44,23 +44,21 @@ namespace COVIDVACCSYSTEM.View
             this.GenerateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GenerateButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.GenerateButton.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (218)))), ((int) (((byte) (218)))), ((int) (((byte) (218)))));
-            this.GenerateButton.Location = new System.Drawing.Point(386, 513);
-            this.GenerateButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.GenerateButton.Location = new System.Drawing.Point(355, 401);
             this.GenerateButton.Name = "GenerateButton";
-            this.GenerateButton.Size = new System.Drawing.Size(233, 88);
+            this.GenerateButton.Size = new System.Drawing.Size(207, 70);
             this.GenerateButton.TabIndex = 0;
             this.GenerateButton.Text = "GENERAR CITA";
             this.GenerateButton.UseVisualStyleBackColor = false;
-            this.GenerateButton.Click += new System.EventHandler(this.GenerateButton_Click);
             // 
             // TitleLbl
             // 
             this.TitleLbl.BackColor = System.Drawing.Color.Transparent;
             this.TitleLbl.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.TitleLbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.TitleLbl.Location = new System.Drawing.Point(269, 184);
+            this.TitleLbl.Location = new System.Drawing.Point(263, 95);
             this.TitleLbl.Name = "TitleLbl";
-            this.TitleLbl.Size = new System.Drawing.Size(457, 97);
+            this.TitleLbl.Size = new System.Drawing.Size(390, 71);
             this.TitleLbl.TabIndex = 1;
             this.TitleLbl.Text = "GENERAR NUEVA CITA";
             this.TitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -70,9 +68,9 @@ namespace COVIDVACCSYSTEM.View
             this.DUILbl.BackColor = System.Drawing.Color.Transparent;
             this.DUILbl.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.DUILbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.DUILbl.Location = new System.Drawing.Point(324, 281);
+            this.DUILbl.Location = new System.Drawing.Point(285, 249);
             this.DUILbl.Name = "DUILbl";
-            this.DUILbl.Size = new System.Drawing.Size(358, 100);
+            this.DUILbl.Size = new System.Drawing.Size(349, 75);
             this.DUILbl.TabIndex = 2;
             this.DUILbl.Text = "INGRESE NUMERO DE DUI \r\n(sin guiones, ni espacios)";
             this.DUILbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,20 +78,19 @@ namespace COVIDVACCSYSTEM.View
             // DUITB
             // 
             this.DUITB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.DUITB.Location = new System.Drawing.Point(345, 402);
-            this.DUITB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DUITB.Location = new System.Drawing.Point(320, 341);
             this.DUITB.Name = "DUITB";
-            this.DUITB.Size = new System.Drawing.Size(311, 37);
+            this.DUITB.Size = new System.Drawing.Size(277, 32);
             this.DUITB.TabIndex = 3;
             // 
             // AppointmentGenerator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (218)))), ((int) (((byte) (218)))), ((int) (((byte) (218)))));
             this.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1084, 871);
+            this.ClientSize = new System.Drawing.Size(964, 697);
             this.Controls.Add(this.DUITB);
             this.Controls.Add(this.DUILbl);
             this.Controls.Add(this.TitleLbl);
@@ -101,17 +98,14 @@ namespace COVIDVACCSYSTEM.View
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AppointmentGenerator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            
+            this.Load += new System.EventHandler(this.AppointmentGenerator_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
-
-        private System.Windows.Forms.TextBox textBox1;
 
         private System.Windows.Forms.TextBox DUITB;
 
