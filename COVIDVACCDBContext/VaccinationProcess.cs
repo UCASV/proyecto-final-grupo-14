@@ -15,12 +15,12 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
         public int Id { get; set; }
         public DateTime ProcessDate { get; set; }
         public TimeSpan ProcessTime { get; set; }
-        public TimeSpan VaccTime { get; set; }
-        public int VaccAppId { get; set; }
+        public TimeSpan VaccinationTime { get; set; }
+        public int VaccinationAppId { get; set; }
         public int SideEffectsId { get; set; }
 
         public virtual SideEffect SideEffects { get; set; }
-        public virtual ICollection<Employeexprocess> Employeexprocesses { get; set; }
+        public virtual IEnumerable<Employeexprocess> Employeexprocesses { get; set; }
         
         
     }
