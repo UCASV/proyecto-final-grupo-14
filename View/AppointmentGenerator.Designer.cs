@@ -50,6 +50,7 @@ namespace COVIDVACCSYSTEM.View
             this.GenerateButton.TabIndex = 0;
             this.GenerateButton.Text = "GENERAR CITA";
             this.GenerateButton.UseVisualStyleBackColor = false;
+            this.GenerateButton.Click += new System.EventHandler(this.GenerateButton_Click);
             // 
             // TitleLbl
             // 
@@ -102,7 +103,6 @@ namespace COVIDVACCSYSTEM.View
             this.MinimizeBox = false;
             this.Name = "AppointmentGenerator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.AppointmentGenerator_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
         }

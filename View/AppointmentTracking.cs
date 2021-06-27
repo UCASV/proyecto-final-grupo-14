@@ -1,8 +1,16 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Reflection;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 
@@ -26,7 +34,10 @@ namespace COVIDVACCSYSTEM.View
             try
             {
                 _sqlConnection.Open();
-                string searchCitizen = "SELECT dui AS DUI, first_name AS 'NOMBRES', last_name AS 'APELLIDOS', birthday AS 'FECHA DE NACIMIENTO', email AS 'CORREO ELECTRONICO', city_id AS 'CIUDAD DE ORIGEN', institution_id AS 'INSTITUCION' FROM CITIZEN WHERE dui = '"+DUITB.Text+"'";
+
+                string searchCitizen = "SELECT CITIZEN.dui AS DUI, first_name AS 'NOMBRES', last_name AS 'APELLIDOS', birthday AS 'FECHA DE NACIMIENTO', email AS 'CORREO ELECTRONICO', CITY.city_name AS 'CIUDAD DE ORIGEN', INSTITUTION.institution_name AS 'INSTITUCION' FROM CITIZEN, CITY, INSTITUTION WHERE dui = '"+DUITB.Text+"' AND CITIZEN.city_id = CITY.id AND CITIZEN.institution_id = INSTITUTION.id";
+
+
                 string searchAppointment = "SELECT id AS 'ID DE CITA', app_date AS 'FECHA', app_time AS 'HORA', cabin_id AS 'CABINA' FROM VACCINATION_APPOINTMENT WHERE citizen_id = '"+DUITB.Text+"'";
                 SqlDataAdapter sqlAdapter1 = new SqlDataAdapter(searchCitizen, _sqlConnection);
                 SqlDataAdapter sqlAdapter2 = new SqlDataAdapter(searchAppointment, _sqlConnection);
@@ -48,17 +59,18 @@ namespace COVIDVACCSYSTEM.View
                 throw;
             }
         }
-        
+
+
         private void PrintButton_Click(object sender, EventArgs e)
         {
-            //Creating iTextSharp Table from the DataTable data
-            PdfPTable pdfTable = new PdfPTable(CitizenDGV.ColumnCount);
+          PdfPTable pdfTable = new PdfPTable(CitizenDGV.ColumnCount);
             pdfTable.DefaultCell.Padding = 3;
-            pdfTable.WidthPercentage = 30;
-            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+            pdfTable.WidthPercentage = 80;
+            pdfTable.HorizontalAlignment = Element.ALIGN_CENTER;
             pdfTable.DefaultCell.BorderWidth = 1;
+            pdfTable.SpacingAfter = 12.5f;
  
-            //Adding Header row
+            
             foreach (DataGridViewColumn column in CitizenDGV.Columns)
             {
                 PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
@@ -66,7 +78,7 @@ namespace COVIDVACCSYSTEM.View
                 pdfTable.AddCell(cell);
             }
  
-            //Adding DataRow
+
             foreach (DataGridViewRow row in CitizenDGV.Rows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
@@ -75,38 +87,57 @@ namespace COVIDVACCSYSTEM.View
                 }
             }
  
-            //Exporting to PDF
+
+            PdfPTable pdfTable2 = new PdfPTable(AppointmentsDGV.ColumnCount);
+            pdfTable2.DefaultCell.Padding = 3;
+            pdfTable2.WidthPercentage = 50;
+            pdfTable2.HorizontalAlignment = Element.ALIGN_CENTER;
+            pdfTable2.DefaultCell.BorderWidth = 1;
+
+            foreach (DataGridViewColumn column in AppointmentsDGV.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                
+                pdfTable2.AddCell(cell);
+            }
+
+            foreach (DataGridViewRow row in AppointmentsDGV.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    pdfTable2.AddCell(cell.Value.ToString());
+                }
+            }
+
             string folderPath = "C:\\PDFs\\";
+            string citizenId = DUITB.Text;
+
             if (!Directory.Exists(folderPath))
             {
                 Directory.CreateDirectory(folderPath);
             }
-            using (FileStream stream = new FileStream(folderPath + "DataGridViewExport.pdf", FileMode.Create))
+
+            using (FileStream stream = new FileStream(folderPath + citizenId +".pdf", FileMode.Create))
+
             {
                 Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
                 PdfWriter.GetInstance(pdfDoc, stream);
                 pdfDoc.Open();
                 pdfDoc.Add(pdfTable);
+                pdfDoc.Add(pdfTable2);
                 pdfDoc.Close();
                 stream.Close();
             }
+
+            MessageBox.Show("El archivo se encuentra ubicado en carpeta PDFs en disco local", "GUARDADO",
+                MessageBoxButtons.OK);
+
+
+            }
+
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

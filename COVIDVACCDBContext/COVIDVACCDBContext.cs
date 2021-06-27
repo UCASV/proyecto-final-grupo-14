@@ -485,3 +485,7 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
+
+
+
+
