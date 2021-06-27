@@ -34,7 +34,7 @@ namespace COVIDVACCSYSTEM.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppointmentTracking));
             this.TitleLbl = new System.Windows.Forms.Label();
             this.DUILbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DUITB = new System.Windows.Forms.TextBox();
             this.CitizenDGV = new System.Windows.Forms.DataGridView();
             this.AppointmentsDGV = new System.Windows.Forms.DataGridView();
             this.AppointmentLbl = new System.Windows.Forms.Label();
@@ -69,13 +69,13 @@ namespace COVIDVACCSYSTEM.View
             this.DUILbl.Text = "Ingrese DUI";
             this.DUILbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox1
+            // DUITB
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.textBox1.Location = new System.Drawing.Point(381, 129);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(287, 32);
-            this.textBox1.TabIndex = 2;
+            this.DUITB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.DUITB.Location = new System.Drawing.Point(381, 129);
+            this.DUITB.Name = "DUITB";
+            this.DUITB.Size = new System.Drawing.Size(287, 32);
+            this.DUITB.TabIndex = 2;
             // 
             // CitizenDGV
             // 
@@ -144,6 +144,7 @@ namespace COVIDVACCSYSTEM.View
             this.EnterButton.TabIndex = 7;
             this.EnterButton.Text = "Ingresar";
             this.EnterButton.UseVisualStyleBackColor = false;
+            this.EnterButton.Click += new System.EventHandler(this.EnterButton_Click);
             // 
             // PrintButton
             // 
@@ -158,6 +159,7 @@ namespace COVIDVACCSYSTEM.View
             this.PrintButton.TabIndex = 8;
             this.PrintButton.Text = "Imprimir";
             this.PrintButton.UseVisualStyleBackColor = false;
+            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
             // AppointmentTracking
             // 
@@ -173,7 +175,7 @@ namespace COVIDVACCSYSTEM.View
             this.Controls.Add(this.AppointmentLbl);
             this.Controls.Add(this.AppointmentsDGV);
             this.Controls.Add(this.CitizenDGV);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DUITB);
             this.Controls.Add(this.DUILbl);
             this.Controls.Add(this.TitleLbl);
             this.DoubleBuffered = true;
@@ -198,7 +200,7 @@ namespace COVIDVACCSYSTEM.View
         private System.Windows.Forms.DataGridView CitizenDGV;
 
         private System.Windows.Forms.Label DUILbl;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DUITB;
 
         private System.Windows.Forms.Label TitleLbl;
 

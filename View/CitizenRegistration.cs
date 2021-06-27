@@ -74,39 +74,32 @@ namespace COVIDVACCSYSTEM.View
 
                 _context.Add(phone);
                 
-                foreach (DataRowView illness in ailmentLB.Items)
+                foreach (ChronicIllness illness in ailmentLB.Items)
                 {
-                    Ailment ailments = new Ailment
+                    verify =  ((ChronicIllness) ailmentLB.SelectedItem).Id == illness.Id;
+                      
+                   //solo jala uno
+                    if (verify)
                     {
-                        Citizen = newCitizen, ChronicIllnes chro = new ChronicIllnes();
-                                                                     chro = _context.ChronicIllnesses.FirstOrDefault(c => c.Id == ailmentLB.SelectedIndex);
-                       
-                        Illness = chro;
-                    }
-                    ailments.Citizen = cit;
+                        ChronicIllness chro = new ChronicIllness();
+                        chro.Id = ((ChronicIllness) ailmentLB.SelectedItem).Id;
+                        ChronicIllness dbChronic = _context.Set<ChronicIllness>().SingleOrDefault(c => c.Id == chro.Id);
 
-                    
-                    
-                    ailm.Create(ailments);
+                        Ailment ailments = new Ailment
+                        {
+                            Citizen = newCitizen,
+                            //IllnessId = illness.Id
+                        };
+                        
+                        ailments.Illness = dbChronic;
+
+                        _context.Add(ailments);
+                    }
+       
                 }
-                /*citicon.Citizens.Add(newCitizen);
-                inst.Citizens.Add(newCitizen);
-                _context.Update(citicon);*/
-                
-                //dbcity.Citizens.Add(newCitizen);
-                //dbins.Citizens.Add(newCitizen);
+              
                 _context.SaveChanges();
 
-               
-                
-
-                //Citizen cit = _context.Citizens.FirstOrDefault(c => c.Dui == newCitizen.Dui);
-                //phone.Citizen = cit;
-                
-                
-
-                
-                
                 MessageBox.Show("Ciudadano creado exitosamente", "Ciudadano creado", MessageBoxButtons.OK);
             }
             else
@@ -154,3 +147,5 @@ namespace COVIDVACCSYSTEM.View
         }
     }
 }
+
+
