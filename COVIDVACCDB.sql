@@ -18,10 +18,6 @@ phone_number VARCHAR(8) NOT NULL,
 citizen_id VARCHAR(8) NOT NULL
 );
 
-insert into citizen values (12345678,'joe','barrer','2021-05-9','jbmz@gmail.com',1,2);
-insert into VACCINATION_APPOINTMENT values ('2021-05-10','10:10:00',1,12345678)
-select * from VACCINATION_APPOINTMENT
-
 CREATE TABLE INSTITUTION (
 id INT PRIMARY KEY,
 institution_name VARCHAR (50)
@@ -158,8 +154,9 @@ INSERT INTO SYMPTOM VALUES (9, 'ANAFILAXIA');
 INSERT INTO INSTITUTION VALUES (1, 'EDUCACION');
 INSERT INTO INSTITUTION VALUES (2, 'SALUD');
 INSERT INTO INSTITUTION VALUES (3, 'SEGURIDAD');
-INSERT INTO INSTITUTION VALUES (4, 'GOBERNACI�N');
-INSERT INTO INSTITUTION VALUES (5, 'MEDIOS DE COMUNICACI�N');
+INSERT INTO INSTITUTION VALUES (4, 'GOBERNACIÓN');
+INSERT INTO INSTITUTION VALUES (5, 'MEDIOS DE COMUNICACIÓN');
+INSERT INTO INSTITUTION VALUES (6, 'NO PERTENECE A NINGUNA');
 
 INSERT INTO CHRONIC_ILLNESS VALUES (1, 'DIABETES');
 INSERT INTO CHRONIC_ILLNESS VALUES (2, 'ENFERMEDAD PULMONAR OBSTRUCTIVA CRONICA');
@@ -189,7 +186,7 @@ INSERT INTO STATE VALUES (5, 'CHALATENANGO');
 INSERT INTO STATE VALUES (6, 'SAN SALVADOR');
 INSERT INTO STATE VALUES (7, 'CUSCATLAN');
 INSERT INTO STATE VALUES (8, 'LA PAZ');
-INSERT INTO STATE VALUES (9, 'CABA�AS');
+INSERT INTO STATE VALUES (9, 'CABAÑAS');
 INSERT INTO STATE VALUES (10, 'SAN VICENTE');
 INSERT INTO STATE VALUES (11, 'USULUTAN');
 INSERT INTO STATE VALUES (12, 'SAN MIGUEL');
@@ -363,7 +360,7 @@ INSERT INTO CITY VALUES ('SANTIAGO NONUALCO', 8);
 INSERT INTO CITY VALUES ('TAPALHUACA', 8);
 INSERT INTO CITY VALUES ('ZACATECOLUCA', 8);
 
-/* MUNICIPIOS DE CABA�AS */
+/* MUNICIPIOS DE CABAÑAS */
 INSERT INTO CITY VALUES ('CINQUERA', 9);
 INSERT INTO CITY VALUES ('DOLORES', 9);
 INSERT INTO CITY VALUES ('GUACOTECTI', 9);
@@ -401,7 +398,7 @@ INSERT INTO CITY VALUES ('ESTANZUELAS', 11);
 INSERT INTO CITY VALUES ('JIQUILISCO', 11);
 INSERT INTO CITY VALUES ('JUCUAPA', 11);
 INSERT INTO CITY VALUES ('JUCUARAN', 11);
-INSERT INTO CITY VALUES ('MERCEDES UMA�A', 11);
+INSERT INTO CITY VALUES ('MERCEDES UMAÑA', 11);
 INSERT INTO CITY VALUES ('NUEVA GRANADA', 11);
 INSERT INTO CITY VALUES ('OZATLAN', 11);
 INSERT INTO CITY VALUES ('PUERTO EL TRIUNFO', 11);
@@ -487,59 +484,59 @@ INSERT INTO CITY VALUES ('YUCUAIQUIN', 14);
 
 
 /*EMPLEADOS SANTA ANA*/
-INSERT INTO EMPLOYEE VALUES ('Olimpia', 'Pacheco-Farr�', 'opachecofarre@minsal.com.sv', 1, 1);
+INSERT INTO EMPLOYEE VALUES ('Olimpia', 'Pacheco-Farré', 'opachecofarre@minsal.com.sv', 1, 1);
 INSERT INTO EMPLOYEE VALUES ('Ernesto', 'Barroso Heredia', 'ebarrosoheredia@minsal.com.sv', 2, 2);
-INSERT INTO EMPLOYEE VALUES ('Federico', 'Plaza Est�vez', 'fplazaesteveza@minsal.com.sv', 2, 3);
+INSERT INTO EMPLOYEE VALUES ('Federico', 'Plaza Estévez', 'fplazaesteveza@minsal.com.sv', 2, 3);
 INSERT INTO EMPLOYEE VALUES ('Alma', 'Vallejo-Pulido', 'avallejopulido@minsal.com.sv', 3, 4);
 INSERT INTO EMPLOYEE VALUES ('Jose Carlos', 'Planas Exposito', 'jplanasexposito@minsal.com.sv', 3, 5);
 
-INSERT INTO EMPLOYEE VALUES ('Mat�as', 'Delgado Tejedor', 'mdelgadotejedor@minsal.com.sv', 1, 6);
+INSERT INTO EMPLOYEE VALUES ('Matías', 'Delgado Tejedor', 'mdelgadotejedor@minsal.com.sv', 1, 6);
 INSERT INTO EMPLOYEE VALUES ('Abigail', 'Ainoa de Aramburu', 'aainoadearamburu@minsal.com.sv', 2, 7);
-INSERT INTO EMPLOYEE VALUES ('N�lida Isabel', 'Burgos Alfaro', 'nburgosalfaro@minsal.com.sv', 2, 8);
-INSERT INTO EMPLOYEE VALUES ('Marcial', 'Beltr�n Cobo', 'mbeltrancobo@minsal.com.sv', 3, 9);
-INSERT INTO EMPLOYEE VALUES ('Tatiana Salud', 'Almeida Acu�a', 'talmeidaacuna@minsal.com.sv', 3, 10);
+INSERT INTO EMPLOYEE VALUES ('Nélida Isabel', 'Burgos Alfaro', 'nburgosalfaro@minsal.com.sv', 2, 8);
+INSERT INTO EMPLOYEE VALUES ('Marcial', 'Beltrán Cobo', 'mbeltrancobo@minsal.com.sv', 3, 9);
+INSERT INTO EMPLOYEE VALUES ('Tatiana Salud', 'Almeida Acuña', 'talmeidaacuna@minsal.com.sv', 3, 10);
 
-INSERT INTO EMPLOYEE VALUES ('Faustino Nicol�s', 'Escudero Perez', 'fescueroperez@minsal.com.sv', 1, 11);
-INSERT INTO EMPLOYEE VALUES ('Viviana Diana', 'Maldonado D�az', 'vmaldonadodiaz@minsal.com.sv', 2, 12);
-INSERT INTO EMPLOYEE VALUES ('Teresa', 'Mar�n-Rosales', 'tmarinrosales@minsal.com.sv', 2, 13);
-INSERT INTO EMPLOYEE VALUES ('Octavio', 'Garcia Ur�a', 'ogaricauria@minsal.com.sv', 3, 10);
-INSERT INTO EMPLOYEE VALUES ('Flavio', 'Anaya C�rdoba', '@minsal.com.sv', 3, 9);
+INSERT INTO EMPLOYEE VALUES ('Faustino Nicolás', 'Escudero Perez', 'fescueroperez@minsal.com.sv', 1, 11);
+INSERT INTO EMPLOYEE VALUES ('Viviana Diana', 'Maldonado Díaz', 'vmaldonadodiaz@minsal.com.sv', 2, 12);
+INSERT INTO EMPLOYEE VALUES ('Teresa', 'Marín-Rosales', 'tmarinrosales@minsal.com.sv', 2, 13);
+INSERT INTO EMPLOYEE VALUES ('Octavio', 'Garcia Uría', 'ogaricauria@minsal.com.sv', 3, 10);
+INSERT INTO EMPLOYEE VALUES ('Flavio', 'Anaya Córdoba', '@minsal.com.sv', 3, 9);
 
 /*EMPLEADOS SONSONATE*/
 INSERT INTO EMPLOYEE VALUES ('Francisco Juanito', 'Company Iniesta', 'fcompanyiniesta@minsal.com.sv', 1, 14);
 INSERT INTO EMPLOYEE VALUES ('Angelita', 'Muro Bayo', 'amurobayo@minsal.com.sv', 2, 15);
 INSERT INTO EMPLOYEE VALUES ('Candelaria Aura', 'Casas Murcia', 'ccasasmurcia@minsal.com.sv', 2, 16);
 INSERT INTO EMPLOYEE VALUES ('Nilda', 'Castillo', 'ncastillo@minsal.com.sv', 3, 17);
-INSERT INTO EMPLOYEE VALUES ('Carlos', 'Mar� Morell', 'cmarimorell@minsal.com.sv', 3, 18);
+INSERT INTO EMPLOYEE VALUES ('Carlos', 'Marí Morell', 'cmarimorell@minsal.com.sv', 3, 18);
 
-INSERT INTO EMPLOYEE VALUES ('Domingo', 'del Garc�s', 'ddelgarces@minsal.com.sv', 1, 19);
+INSERT INTO EMPLOYEE VALUES ('Domingo', 'del Garcés', 'ddelgarces@minsal.com.sv', 1, 19);
 INSERT INTO EMPLOYEE VALUES ('Roberto', 'Camino-Salom', 'rcaminosalom@minsal.com.sv', 2, 20);
 INSERT INTO EMPLOYEE VALUES ('Priscila', 'Guijarro Alberola', 'pguijarroalberola@minsal.com.sv', 2, 21);
-INSERT INTO EMPLOYEE VALUES ('Silvio', 'Rossell� Gomez', 'srosellogomez@minsal.com.sv', 3, 22);
+INSERT INTO EMPLOYEE VALUES ('Silvio', 'Rosselló Gomez', 'srosellogomez@minsal.com.sv', 3, 22);
 INSERT INTO EMPLOYEE VALUES ('Olalla', 'Querol Duque', 'oquerolduque@minsal.com.sv', 3, 23);
 
-INSERT INTO EMPLOYEE VALUES ('Ismael', 'Huguet Exp�sito', 'ihuguetexposito@minsal.com.sv', 1, 24);
+INSERT INTO EMPLOYEE VALUES ('Ismael', 'Huguet Expósito', 'ihuguetexposito@minsal.com.sv', 1, 24);
 INSERT INTO EMPLOYEE VALUES ('Evita', 'Solana Chaparro', 'esolanachaparro@minsal.com.sv', 2, 25);
-INSERT INTO EMPLOYEE VALUES ('�gata', 'Garcia Ferrera', 'agarciaferrera@minsal.com.sv', 2, 26);
-INSERT INTO EMPLOYEE VALUES ('Sof�a', 'Benet Mariscal', 'sbenetmariscal@minsal.com.sv', 3, 27);
-INSERT INTO EMPLOYEE VALUES ('Mariano', 'Ju�rez', 'mjuarez@minsal.com.sv', 3, 28);
+INSERT INTO EMPLOYEE VALUES ('Ágata', 'Garcia Ferrera', 'agarciaferrera@minsal.com.sv', 2, 26);
+INSERT INTO EMPLOYEE VALUES ('Sofía', 'Benet Mariscal', 'sbenetmariscal@minsal.com.sv', 3, 27);
+INSERT INTO EMPLOYEE VALUES ('Mariano', 'Juárez', 'mjuarez@minsal.com.sv', 3, 28);
 
 /*EMPLEADOS AHUACHAPAN*/ 
 INSERT INTO EMPLOYEE VALUES ('Paca', 'Saez Saura', 'psaezsaura@minsal.com.sv', 1, 29);
-INSERT INTO EMPLOYEE VALUES ('Calixta', 'Nebot V�lez', 'cnebotvelez@minsal.com.sv', 2, 30);
-INSERT INTO EMPLOYEE VALUES ('Lisandro Mois�s', 'M�rquez Catal�n', 'lmarquezcatalan@minsal.com.sv', 2, 31);
+INSERT INTO EMPLOYEE VALUES ('Calixta', 'Nebot Vélez', 'cnebotvelez@minsal.com.sv', 2, 30);
+INSERT INTO EMPLOYEE VALUES ('Lisandro Moisés', 'Márquez Catalán', 'lmarquezcatalan@minsal.com.sv', 2, 31);
 INSERT INTO EMPLOYEE VALUES ('Albano', 'de Bilbao', 'adebilbao@minsal.com.sv', 3, 32);
 INSERT INTO EMPLOYEE VALUES ('Modesta', 'Rivera-Alvarez', 'mriveraalvarez@minsal.com.sv', 3, 33);
  
-INSERT INTO EMPLOYEE VALUES ('Soraya', 'Ure�a Peinado', 'surenapeinado@minsal.com.sv', 1, 34);
+INSERT INTO EMPLOYEE VALUES ('Soraya', 'Ureña Peinado', 'surenapeinado@minsal.com.sv', 1, 34);
 INSERT INTO EMPLOYEE VALUES ('Leyre', 'Torrens', 'ltorrens@minsal.com.sv', 2, 35);
-INSERT INTO EMPLOYEE VALUES ('Laura Matilde', 'Vives Ure�a', 'lvivesurena@minsal.com.sv', 2, 36);
+INSERT INTO EMPLOYEE VALUES ('Laura Matilde', 'Vives Ureña', 'lvivesurena@minsal.com.sv', 2, 36);
 INSERT INTO EMPLOYEE VALUES ('Nicolasa', 'Escamilla Varela', 'nescamillavarela@minsal.com.sv', 3, 37);
 INSERT INTO EMPLOYEE VALUES ('Marino', 'Losa Cuevas', 'mlosacuevas@minsal.com.sv', 3, 37);
  
-INSERT INTO EMPLOYEE VALUES ('Toribio', 'D�vila Pedro', 'tdavilapedro@minsal.com.sv', 1, 33);
-INSERT INTO EMPLOYEE VALUES ('Vicente', 'Ruano-Tom�', 'vruanotome@minsal.com.sv', 2, 33);
-INSERT INTO EMPLOYEE VALUES ('In�s', 'Rold�n Coloma', 'iroldancoloma@minsal.com.sv', 2, 34);
+INSERT INTO EMPLOYEE VALUES ('Toribio', 'Dávila Pedro', 'tdavilapedro@minsal.com.sv', 1, 33);
+INSERT INTO EMPLOYEE VALUES ('Vicente', 'Ruano-Tomé', 'vruanotome@minsal.com.sv', 2, 33);
+INSERT INTO EMPLOYEE VALUES ('Inés', 'Roldán Coloma', 'iroldancoloma@minsal.com.sv', 2, 34);
 INSERT INTO EMPLOYEE VALUES ('Judith', 'Macias Gargallo', 'jmaciasgargallo@minsal.com.sv', 3, 36);
 INSERT INTO EMPLOYEE VALUES ('Bibiana', 'de Delgado', 'bdedelgado@minsal.com.sv', 3, 37);
 
@@ -548,89 +545,89 @@ INSERT INTO EMPLOYEE VALUES ('Bibiana', 'de Delgado', 'bdedelgado@minsal.com.sv'
 INSERT INTO EMPLOYEE VALUES ('Nilo', 'del Pastor', 'ndelpastor@minsal.com.sv', 1, 41);
 INSERT INTO EMPLOYEE VALUES ('Candelas', 'del Heredia', 'cdelheredia@minsal.com.sv', 2, 42);
 INSERT INTO EMPLOYEE VALUES ('Onofre', 'Iglesias Cordero', 'oiglesiascordero@minsal.com.sv', 2, 43);
-INSERT INTO EMPLOYEE VALUES ('Mar�a �ngeles', 'Uriarte Gimeno', 'muriartegimeno@minsal.com.sv', 3, 44);
+INSERT INTO EMPLOYEE VALUES ('María Ángeles', 'Uriarte Gimeno', 'muriartegimeno@minsal.com.sv', 3, 44);
 INSERT INTO EMPLOYEE VALUES ('Leocadio', 'Cueto Iniesta', 'lcuetoiniesta@minsal.com.sv', 3, 45);
 
 INSERT INTO EMPLOYEE VALUES ('Ramona', 'Carretero Malo', 'rcarreteromalo@minsal.com.sv', 1, 46);
 INSERT INTO EMPLOYEE VALUES ('Gisela', 'de Codina', 'gdecodina@minsal.com.sv', 2, 47);
-INSERT INTO EMPLOYEE VALUES ('Ar�nzazu', 'Escamilla Correa', 'aescamillacorrea@minsal.com.sv', 2, 48);
-INSERT INTO EMPLOYEE VALUES ('Alma', 'Maldonado-Pi�a', 'amaldonadopina@minsal.com.sv', 3, 49);
-INSERT INTO EMPLOYEE VALUES ('Rosenda', 'Rivas Valc�rcel', 'rrivasvalcarcel@minsal.com.sv', 3, 50);
+INSERT INTO EMPLOYEE VALUES ('Aránzazu', 'Escamilla Correa', 'aescamillacorrea@minsal.com.sv', 2, 48);
+INSERT INTO EMPLOYEE VALUES ('Alma', 'Maldonado-Piña', 'amaldonadopina@minsal.com.sv', 3, 49);
+INSERT INTO EMPLOYEE VALUES ('Rosenda', 'Rivas Valcárcel', 'rrivasvalcarcel@minsal.com.sv', 3, 50);
   
 INSERT INTO EMPLOYEE VALUES ('Elba', 'Costa Barreda', 'ecostabarreda@minsal.com.sv', 1, 49);
-INSERT INTO EMPLOYEE VALUES ('�ngrid', 'Adadia Torrecilla', 'iadadiatorrecilla@minsal.com.sv', 2, 51);
-INSERT INTO EMPLOYEE VALUES ('Mar�a Luisa', 'Sanchez-Godoy', 'msanchezgodoy@minsal.com.sv', 2, 52);
+INSERT INTO EMPLOYEE VALUES ('Íngrid', 'Adadia Torrecilla', 'iadadiatorrecilla@minsal.com.sv', 2, 51);
+INSERT INTO EMPLOYEE VALUES ('María Luisa', 'Sanchez-Godoy', 'msanchezgodoy@minsal.com.sv', 2, 52);
 INSERT INTO EMPLOYEE VALUES ('Fito', 'Leon Arteaga', 'fleonarteaga@minsal.com.sv', 3, 52);
-INSERT INTO EMPLOYEE VALUES ('Hortensia Ariel', 'Ram�n Cruz', 'hramoncruz@minsal.com.sv', 3, 53);
+INSERT INTO EMPLOYEE VALUES ('Hortensia Ariel', 'Ramón Cruz', 'hramoncruz@minsal.com.sv', 3, 53);
 
 /*EMPLEADOS CHALATENANGO*/
-INSERT INTO EMPLOYEE VALUES ('�mbar Eva', 'Marco Cantero', 'amarcocentero@minsal.com.sv', 1, 64);
+INSERT INTO EMPLOYEE VALUES ('Ámbar Eva', 'Marco Cantero', 'amarcocentero@minsal.com.sv', 1, 64);
 INSERT INTO EMPLOYEE VALUES ('Manola', 'Yuste', 'myuste@minsal.com.sv', 2, 66);
 INSERT INTO EMPLOYEE VALUES ('Gracia', 'Roman Vilanova', 'gromanvilanova@minsal.com.sv', 2, 68);
 INSERT INTO EMPLOYEE VALUES ('Jovita', 'Gelabert-Bonet', 'jgelabertbonet@minsal.com.sv', 3, 70);
-INSERT INTO EMPLOYEE VALUES ('�ngel', 'Iba�ez Almagro', 'aibanezalmagro@minsal.com.sv', 3, 72);
+INSERT INTO EMPLOYEE VALUES ('Ángel', 'Ibañez Almagro', 'aibanezalmagro@minsal.com.sv', 3, 72);
 
-INSERT INTO EMPLOYEE VALUES ('David', 'Larra�aga Arana', 'dlarranagaarana@minsal.com.sv', 1, 74);
+INSERT INTO EMPLOYEE VALUES ('David', 'Larrañaga Arana', 'dlarranagaarana@minsal.com.sv', 1, 74);
 INSERT INTO EMPLOYEE VALUES ('Leandro', 'de Bautista', 'ldebautista@minsal.com.sv', 2, 76);
-INSERT INTO EMPLOYEE VALUES ('Eric', 'Belmonte N��ez', 'ebelmontenunez@minsal.com.sv', 2, 80);
+INSERT INTO EMPLOYEE VALUES ('Eric', 'Belmonte Núñez', 'ebelmontenunez@minsal.com.sv', 2, 80);
 INSERT INTO EMPLOYEE VALUES ('Rosalva', 'Mata Carranza', 'rmatacarranza@minsal.com.sv', 3, 82);
-INSERT INTO EMPLOYEE VALUES ('Mar�a', 'Somoza Salda�a', 'msomozasaldana@minsal.com.sv', 3, 84);
+INSERT INTO EMPLOYEE VALUES ('María', 'Somoza Saldaña', 'msomozasaldana@minsal.com.sv', 3, 84);
 
 INSERT INTO EMPLOYEE VALUES ('Mohamed', 'Villar Zapata', 'mvillarzapata@minsal.com.sv', 1, 86);
 INSERT INTO EMPLOYEE VALUES ('Borja', 'del Fortuny', 'bdelfortuny@minsal.com.sv', 2, 88);
-INSERT INTO EMPLOYEE VALUES ('Dan Glauco', 'Cal Salda�a', 'dcalsaldana@minsal.com.sv', 2, 75);
-INSERT INTO EMPLOYEE VALUES ('Te�fila', 'Busquets Casas', 'tbusquetscasas@minsal.com.sv', 3, 73);
-INSERT INTO EMPLOYEE VALUES ('F�tima', 'Nebot', 'fnebot@minsal.com.sv', 3, 89);
+INSERT INTO EMPLOYEE VALUES ('Dan Glauco', 'Cal Saldaña', 'dcalsaldana@minsal.com.sv', 2, 75);
+INSERT INTO EMPLOYEE VALUES ('Teófila', 'Busquets Casas', 'tbusquetscasas@minsal.com.sv', 3, 73);
+INSERT INTO EMPLOYEE VALUES ('Fátima', 'Nebot', 'fnebot@minsal.com.sv', 3, 89);
 
 /*EMPLEADOS SAN SALVADOR*/
-INSERT INTO EMPLOYEE VALUES ('Mar�a Luisa', 'Fortuny Canales', 'mfortunycanales@minsal.com.sv', 1, 109);
+INSERT INTO EMPLOYEE VALUES ('María Luisa', 'Fortuny Canales', 'mfortunycanales@minsal.com.sv', 1, 109);
 INSERT INTO EMPLOYEE VALUES ('Gilberto', 'Campo Segura', 'gcamposegura@minsal.com.sv', 2, 109);
 INSERT INTO EMPLOYEE VALUES ('Donato', 'Fabra', 'dfabra@minsal.com.sv', 2, 109);
-INSERT INTO EMPLOYEE VALUES ('Santiago', 'Tur Amor�s', 'stusamoros@minsal.com.sv', 3, 106);
+INSERT INTO EMPLOYEE VALUES ('Santiago', 'Tur Amorós', 'stusamoros@minsal.com.sv', 3, 106);
 INSERT INTO EMPLOYEE VALUES ('Segismundo', 'del Coronado', 'sdelcoronado@minsal.com.sv', 3, 107);
  
 INSERT INTO EMPLOYEE VALUES ('Belen', 'Baquero Almansa', 'bbaqueroalmansa@minsal.com.sv', 1, 106);
 INSERT INTO EMPLOYEE VALUES ('Saturnino', 'Huguet Somoza', 'shuguetsomoza@minsal.com.sv', 2, 108);
-INSERT INTO EMPLOYEE VALUES ('Asunci�n', 'Marcos', 'amarcos@minsal.com.sv', 2, 110);
+INSERT INTO EMPLOYEE VALUES ('Asunción', 'Marcos', 'amarcos@minsal.com.sv', 2, 110);
 INSERT INTO EMPLOYEE VALUES ('Teo', 'Vara Molina', 'tvaramolina@minsal.com.sv', 3, 104);
-INSERT INTO EMPLOYEE VALUES ('Jenny', 'Pou Sanmart�n', 'jpousanmartin@minsal.com.sv', 3, 105);
+INSERT INTO EMPLOYEE VALUES ('Jenny', 'Pou Sanmartín', 'jpousanmartin@minsal.com.sv', 3, 105);
  
 INSERT INTO EMPLOYEE VALUES ('Nydia', 'Alsina Amo', 'nalsinaamo@minsal.com.sv', 1, 107);
-INSERT INTO EMPLOYEE VALUES ('Emperatriz', 'Calder�n M�gica', 'ecalderonmugica@minsal.com.sv', 2, 109);
+INSERT INTO EMPLOYEE VALUES ('Emperatriz', 'Calderón Múgica', 'ecalderonmugica@minsal.com.sv', 2, 109);
 INSERT INTO EMPLOYEE VALUES ('Feliciana', 'Daza Segura', 'fdazasegura@minsal.com.sv', 2, 106);
 INSERT INTO EMPLOYEE VALUES ('Maximiliano', 'Bernat-Almagro', 'mbernat-almagro@minsal.com.sv', 3, 105);
-INSERT INTO EMPLOYEE VALUES ('Luc�a Diez', 'Pozuelo', 'lpozuelo@minsal.com.sv', 3, 106);
+INSERT INTO EMPLOYEE VALUES ('Lucía Diez', 'Pozuelo', 'lpozuelo@minsal.com.sv', 3, 106);
 
 /*EMPLEADOS CUSCATLAN*/
 INSERT INTO EMPLOYEE VALUES ('Nazaret', 'Suarez', 'nsuarez@minsal.com.sv', 1, 128);
-INSERT INTO EMPLOYEE VALUES ('Florentina', 'Ram�rez Perez', 'framirezperez@minsal.com.sv', 2, 126);
+INSERT INTO EMPLOYEE VALUES ('Florentina', 'Ramírez Perez', 'framirezperez@minsal.com.sv', 2, 126);
 INSERT INTO EMPLOYEE VALUES ('Fernanda', 'Elorza Velasco', 'felorzavelasco@minsal.com.sv', 2, 125);
 INSERT INTO EMPLOYEE VALUES ('Vasco Josep', 'Guerra Cazorla', 'vguerracazorla@minsal.com.sv', 3, 125);
-INSERT INTO EMPLOYEE VALUES ('Lope', 'Arenas Narv�ez', 'larenasnarvaez@minsal.com.sv', 3, 126);
+INSERT INTO EMPLOYEE VALUES ('Lope', 'Arenas Narváez', 'larenasnarvaez@minsal.com.sv', 3, 126);
  
 INSERT INTO EMPLOYEE VALUES ('Valerio', 'Alberto Armas', 'valbertoarmas@minsal.com.sv', 1, 118);
 INSERT INTO EMPLOYEE VALUES ('Mateo', 'Rovira Arroyo', 'mroviraarroyo@minsal.com.sv', 2, 119);
-INSERT INTO EMPLOYEE VALUES ('Susana', 'Valera Ca�ete', 'svaleracanete@minsal.com.sv', 2, 119);
-INSERT INTO EMPLOYEE VALUES ('Dimas', 'Mir Enr�quez', 'dmirenriquez@minsal.com.sv', 3, 120);
-INSERT INTO EMPLOYEE VALUES ('Juan Jos�', 'de Guardia', 'jdeguardia@minsal.com.sv', 3, 120);
+INSERT INTO EMPLOYEE VALUES ('Susana', 'Valera Cañete', 'svaleracanete@minsal.com.sv', 2, 119);
+INSERT INTO EMPLOYEE VALUES ('Dimas', 'Mir Enríquez', 'dmirenriquez@minsal.com.sv', 3, 120);
+INSERT INTO EMPLOYEE VALUES ('Juan José', 'de Guardia', 'jdeguardia@minsal.com.sv', 3, 120);
 
-INSERT INTO EMPLOYEE VALUES ('Ang�lica', 'Rojas', 'arojas@minsal.com.sv', 1, 122);
+INSERT INTO EMPLOYEE VALUES ('Angélica', 'Rojas', 'arojas@minsal.com.sv', 1, 122);
 INSERT INTO EMPLOYEE VALUES ('Dionisio', 'de Solera', 'ddesolera@minsal.com.sv', 2, 123);
-INSERT INTO EMPLOYEE VALUES ('�mbar', 'Tom� Alc�zar', 'atomealcazar@minsal.com.sv', 2, 123);
+INSERT INTO EMPLOYEE VALUES ('Ámbar', 'Tomé Alcázar', 'atomealcazar@minsal.com.sv', 2, 123);
 INSERT INTO EMPLOYEE VALUES ('Aitana', 'Fonseca Solana', 'afonsecasolana@minsal.com.sv', 3, 126);
 INSERT INTO EMPLOYEE VALUES ('Vicenta', 'Gilabert Palacio', 'vgilabertpalacio@minsal.com.sv', 3, 126);
  
 /*EMPLEADOS LA PAZ*/
-INSERT INTO EMPLOYEE VALUES ('Jos� Luis', 'Ord��ez', 'jordonez@minsal.com.sv', 1, 131);
+INSERT INTO EMPLOYEE VALUES ('José Luis', 'Ordóñez', 'jordonez@minsal.com.sv', 1, 131);
 INSERT INTO EMPLOYEE VALUES ('Octavio', 'Pareja Canales', 'oparejacanales@minsal.com.sv', 2, 132);
 INSERT INTO EMPLOYEE VALUES ('Edgardo', 'Prat Pedro', 'epratpedro@minsal.com.sv', 2, 133);
 INSERT INTO EMPLOYEE VALUES ('Sandra', 'Palomo Marco', 'spalomomarco@minsal.com.sv', 3, 132);
-INSERT INTO EMPLOYEE VALUES ('Le�n', 'Noguera Berm�dez', 'lnoguerabermudez@minsal.com.sv', 3, 133);
+INSERT INTO EMPLOYEE VALUES ('León', 'Noguera Bermúdez', 'lnoguerabermudez@minsal.com.sv', 3, 133);
 
 INSERT INTO EMPLOYEE VALUES ('Micaela', 'Neira Blanch', 'mneirablanch@minsal.com.sv', 1, 145);
-INSERT INTO EMPLOYEE VALUES ('Ram�n', 'de Rebollo', 'rderebollo@minsal.com.sv', 2, 146);
+INSERT INTO EMPLOYEE VALUES ('Ramón', 'de Rebollo', 'rderebollo@minsal.com.sv', 2, 146);
 INSERT INTO EMPLOYEE VALUES ('Perlita', 'Garay', 'pgaray@minsal.com.sv', 2, 145);
-INSERT INTO EMPLOYEE VALUES ('Jord�n', 'Chaparro Lu�s', 'jchaparroluis@minsal.com.sv', 3, 147);
+INSERT INTO EMPLOYEE VALUES ('Jordán', 'Chaparro Luís', 'jchaparroluis@minsal.com.sv', 3, 147);
 INSERT INTO EMPLOYEE VALUES ('Ariel', 'Gomila Calleja', 'agomilacalleja@minsal.com.sv', 3, 143);
 
 INSERT INTO EMPLOYEE VALUES ('Juan', 'Azcona Iglesias', 'jazconaiglesias@minsal.com.sv', 1, 140);
@@ -639,8 +636,8 @@ INSERT INTO EMPLOYEE VALUES ('Danilo', 'Lozano Lago', 'dlozanolago@minsal.com.sv
 INSERT INTO EMPLOYEE VALUES ('Cecilia', 'Sierra Maza', 'csieraamaza@minsal.com.sv', 3, 146);
 INSERT INTO EMPLOYEE VALUES ('Rebeca', 'Rivas Rios', 'rrivasrios@minsal.com.sv', 3, 147);
 
-/*EMPLEADOS CABA�AS*/
-INSERT INTO EMPLOYEE VALUES ('Josu�', 'Mulet Corral', 'jmuletcorral@minsal.com.sv', 1, 153);
+/*EMPLEADOS CABAÑAS*/
+INSERT INTO EMPLOYEE VALUES ('Josué', 'Mulet Corral', 'jmuletcorral@minsal.com.sv', 1, 153);
 INSERT INTO EMPLOYEE VALUES ('Martirio', 'Morera Albero', 'mmoreraalbero@minsal.com.sv', 2, 154);
 INSERT INTO EMPLOYEE VALUES ('Lina Socorro', 'Prado Acero', 'lpradoacero@minsal.com.sv', 2, 156);
 INSERT INTO EMPLOYEE VALUES ('Lilia', 'Ramis-Pedrosa', 'lramispedrosa@minsal.com.sv', 3, 156);
@@ -648,30 +645,30 @@ INSERT INTO EMPLOYEE VALUES ('Concha', 'Quero Heredia', 'cqueroheredia@minsal.co
 
 INSERT INTO EMPLOYEE VALUES ('Isaura', 'Sales Duque', 'isalesduque@minsal.com.sv', 1, 156);
 INSERT INTO EMPLOYEE VALUES ('Claudia', 'de Galan', 'cdegalan@minsal.com.sv', 1, 157);
-INSERT INTO EMPLOYEE VALUES ('Primitiva', 'de Herv�s', 'pdehervas@minsal.com.sv', 1, 157);
+INSERT INTO EMPLOYEE VALUES ('Primitiva', 'de Hervás', 'pdehervas@minsal.com.sv', 1, 157);
 INSERT INTO EMPLOYEE VALUES ('Isidoro', 'Puig Arnau', 'ipuigaranu@minsal.com.sv', 1, 158);
-INSERT INTO EMPLOYEE VALUES ('Josefa', 'Echevarr�a Balaguer', 'jecheverriabalaguer@minsal.com.sv', 1, 156);
+INSERT INTO EMPLOYEE VALUES ('Josefa', 'Echevarría Balaguer', 'jecheverriabalaguer@minsal.com.sv', 1, 156);
 
 INSERT INTO EMPLOYEE VALUES ('Ofelia', 'Verdugo Murillo', 'overdugomurillo@minsal.com.sv', 1, 158);
-INSERT INTO EMPLOYEE VALUES ('M�xima', 'de Andrade', 'mdeandrade@minsal.com.sv', 1, 159);
+INSERT INTO EMPLOYEE VALUES ('Máxima', 'de Andrade', 'mdeandrade@minsal.com.sv', 1, 159);
 INSERT INTO EMPLOYEE VALUES ('Luis', 'de Casares', 'ldecasares@minsal.com.sv', 1, 157);
 INSERT INTO EMPLOYEE VALUES ('Celso', 'del Blazquez', 'cdelblazquez@minsal.com.sv', 1, 158);
 INSERT INTO EMPLOYEE VALUES ('Antonio', 'Chaparro Cortes', 'achaparrocortes@minsal.com.sv', 1, 159);
 
 /*EMPLEADOS SAN VICENTE*/
-INSERT INTO EMPLOYEE VALUES ('Rosaura', 'Narv�ez-Coronado', 'rnarvaezcoronado@minsal.com.sv', 1, 162);
+INSERT INTO EMPLOYEE VALUES ('Rosaura', 'Narváez-Coronado', 'rnarvaezcoronado@minsal.com.sv', 1, 162);
 INSERT INTO EMPLOYEE VALUES ('Leocadio Amor', 'Pareja Morales', 'lparejamorales@minsal.com.sv', 2, 163);
 INSERT INTO EMPLOYEE VALUES ('Horacio', 'Viana-Riera', 'hvianarivera@minsal.com.sv', 2, 166);
 INSERT INTO EMPLOYEE VALUES ('Marc', 'Franch Oliveras', 'mfrancholiveras@minsal.com.sv', 3, 167);
 INSERT INTO EMPLOYEE VALUES ('Ramona', 'Bou Nieto', 'rbounieto@minsal.com.sv', 3, 163);
 
 INSERT INTO EMPLOYEE VALUES ('Victoria', 'Arce-Ros', 'varceros@minsal.com.sv', 1, 163);
-INSERT INTO EMPLOYEE VALUES ('Ar�nzazu', 'Mar�n M�nguez', 'amarinminguez@minsal.com.sv', 2, 166);
-INSERT INTO EMPLOYEE VALUES ('Roberta', 'de Bartolom�', 'rdebartolome@minsal.com.sv', 2, 167);
-INSERT INTO EMPLOYEE VALUES ('Aar�n', 'Ricart Moya', 'aricartmoya@minsal.com.sv', 3, 172);
+INSERT INTO EMPLOYEE VALUES ('Aránzazu', 'Marín Mínguez', 'amarinminguez@minsal.com.sv', 2, 166);
+INSERT INTO EMPLOYEE VALUES ('Roberta', 'de Bartolomé', 'rdebartolome@minsal.com.sv', 2, 167);
+INSERT INTO EMPLOYEE VALUES ('Aarón', 'Ricart Moya', 'aricartmoya@minsal.com.sv', 3, 172);
 INSERT INTO EMPLOYEE VALUES ('Nazaret', 'Morante Gomis', 'nmorantegomis@minsal.com.sv', 3, 172);
 
-INSERT INTO EMPLOYEE VALUES ('Trini Salud', 'Oliv� Alvarado', 'tolivealvarado@minsal.com.sv', 1, 172);
+INSERT INTO EMPLOYEE VALUES ('Trini Salud', 'Olivé Alvarado', 'tolivealvarado@minsal.com.sv', 1, 172);
 INSERT INTO EMPLOYEE VALUES ('Sandalio', 'de Maza', 'sdemaza@minsal.com.sv', 2, 172);
 INSERT INTO EMPLOYEE VALUES ('Bonifacio', 'Ferrando Diez', 'bferrandodiez@minsal.com.sv', 2, 171);
 INSERT INTO EMPLOYEE VALUES ('David', 'Nebot Lopez', 'dnebotlopez@minsal.com.sv', 3, 170);
@@ -703,7 +700,7 @@ INSERT INTO EMPLOYEE VALUES ('Lea', 'Cruice Rudiguer', 'lcruicerudiguer@minsal.c
 INSERT INTO EMPLOYEE VALUES ('Aaron', 'Good Rogel', 'agoodrogel@minsal.com.sv', 3, 200);
 INSERT INTO EMPLOYEE VALUES ('Marcos', 'Rogel Zepeda', 'mrogelzepeda@minsal.com.sv', 3, 201);
 
-INSERT INTO EMPLOYEE VALUES ('Nach', 'De Espa�a', 'ndeespana@minsal.com.sv', 1, 202);
+INSERT INTO EMPLOYEE VALUES ('Nach', 'De España', 'ndeespana@minsal.com.sv', 1, 202);
 INSERT INTO EMPLOYEE VALUES ('Ambkor', 'Asturias', 'aasturias@minsal.com.sv', 2, 203);
 INSERT INTO EMPLOYEE VALUES ('Javier', 'Sinfuentes Gonzales', 'jsinfuentesgonzalez@minsal.com.sv', 2, 204);
 INSERT INTO EMPLOYEE VALUES ('Adriana', 'Montoya Fierro', 'amontoyafierro@minsal.com.sv', 3, 205);
@@ -720,9 +717,9 @@ INSERT INTO EMPLOYEE VALUES ('Maria del Carmen', 'Perez Acosta', 'mperezacosta@m
 INSERT INTO EMPLOYEE VALUES ('Jose Pablo', 'Emilio Escobar', 'jemilioescobar@minsal.com.sv', 2, 243);
 INSERT INTO EMPLOYEE VALUES ('Jacinto Alejandro', 'Escobar Galindo', 'jescobargalindo@minsal.com.sv', 2, 243);
 INSERT INTO EMPLOYEE VALUES ('Camila Paola', 'Ruballos Mendoza', 'cruballosmendoza@minsal.com.sv', 3, 244);
-INSERT INTO EMPLOYEE VALUES ('Sonya Maria', 'Albe�o Flores', 'salbe�oflores@minsal.com.sv', 3, 244);
+INSERT INTO EMPLOYEE VALUES ('Sonya Maria', 'Albeño Flores', 'salbeñoflores@minsal.com.sv', 3, 244);
 
-INSERT INTO EMPLOYEE VALUES ('Alma Marcela', 'Gozo Pe�a', 'agozope�a@minsal.com.sv', 1, 244);
+INSERT INTO EMPLOYEE VALUES ('Alma Marcela', 'Gozo Peña', 'agozopeña@minsal.com.sv', 1, 244);
 INSERT INTO EMPLOYEE VALUES ('Benito Carmelo', 'Hernandez Escobar', 'bhernandezescobar@minsal.com.sv', 2, 245);
 INSERT INTO EMPLOYEE VALUES ('Juan Carlos', 'Gonzales Diaz', 'jgonzalesdiaz@minsal.com.sv', 2, 245);
 INSERT INTO EMPLOYEE VALUES ('Diego Javier', 'Flores Gomez', 'dfloresgomez@minsal.com.sv', 3, 245);
@@ -749,7 +746,7 @@ INSERT INTO EMPLOYEE VALUES ('Jose Maria', 'Moure Llorca', 'jmourellorca@minsal.
 
 INSERT INTO EMPLOYEE VALUES ('Antonio Jesus', 'Velez Monreal', 'avelezmonreal@minsal.com.sv', 1, 255);
 INSERT INTO EMPLOYEE VALUES ('Julio Julian', 'Albarracin Alberola', 'jalbarracinalberola@minsal.com.sv', 2, 256);
-INSERT INTO EMPLOYEE VALUES ('Maria Isabel', 'Petit Ca�as', 'mpetitca�as@minsal.com.sv', 2, 257);
+INSERT INTO EMPLOYEE VALUES ('Maria Isabel', 'Petit Cañas', 'mpetitcañas@minsal.com.sv', 2, 257);
 INSERT INTO EMPLOYEE VALUES ('Rosario Dolores', 'Marmol Osorio', 'rmarmolosorio@minsal.com.sv', 3, 258);
 INSERT INTO EMPLOYEE VALUES ('Gonzalo Felix', 'Sapico Orta', 'gsapicoorta@minsal.com.sv', 3, 259);
 
@@ -794,7 +791,7 @@ INSERT INTO CABIN VALUES ('cabinaolocuilta@minsal.com.sv', 134);
 INSERT INTO CABIN VALUES ('cabinazacatecoluca@minsal.com.sv', 151);
 INSERT INTO CABIN VALUES ('cabinasanfranchinameca@minsal.com.sv', 138);
 
-/*CABINAS CABA�AS*/
+/*CABINAS CABAÑAS*/
 INSERT INTO CABIN VALUES ('cabinailobasco@minsal.com.sv', 155);
 INSERT INTO CABIN VALUES ('cabinasensuntepeque@minsal.com.sv', 158);
 INSERT INTO CABIN VALUES ('cabinajutiapa@minsal.com.sv', 156);
