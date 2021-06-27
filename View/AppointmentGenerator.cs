@@ -40,6 +40,7 @@ namespace COVIDVACCSYSTEM.View
 
                 int range = (finish - DateTime.Today).Days;
                 DateTime DateVaccine = DateTime.Today.AddDays(gen.Next(range));
+                DateTime newDateVaccine = DateVaccine.AddDays(42);
                 
                 Random random = new Random();
                 TimeSpan start = TimeSpan.FromHours(7);
@@ -56,7 +57,7 @@ namespace COVIDVACCSYSTEM.View
               
                 
 
-               VaccinationAppointment newapp = new VaccinationAppointment
+               VaccinationAppointment Firstapp = new VaccinationAppointment
                 {
                     
                   AppDate = DateVaccine,
@@ -66,7 +67,17 @@ namespace COVIDVACCSYSTEM.View
                   
 
                 };
-               VaccApp.Create(newapp);
+               VaccApp.Create(Firstapp);
+               VaccinationAppointment Secondapp = new VaccinationAppointment
+               {
+                    
+                   AppDate = newDateVaccine,
+                   AppTime = time,
+                   CabinId = cabinid,
+                   CitizenId = DUITB.Text,
+                   
+               };
+               VaccApp.Create(Secondapp);
 
 
             }
