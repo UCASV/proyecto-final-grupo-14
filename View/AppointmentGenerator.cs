@@ -80,9 +80,7 @@ namespace COVIDVACCSYSTEM.View
                };
                VaccApp.Create(Secondapp);
 
-
                MessageBox.Show("Cita para primera y segunda dosis creada con éxito. Ve a Seguimiento de Cita para más información.", "CITA", MessageBoxButtons.OK);
-
 
             }
             else
@@ -97,6 +95,5 @@ namespace COVIDVACCSYSTEM.View
 
           }
       }
-} 
-
+  } 
 
