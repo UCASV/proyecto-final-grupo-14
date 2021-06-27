@@ -18,6 +18,10 @@ phone_number VARCHAR(8) NOT NULL,
 citizen_id VARCHAR(8) NOT NULL
 );
 
+insert into citizen values (12345678,'joe','barrer','2021-05-9','jbmz@gmail.com',1,2);
+insert into VACCINATION_APPOINTMENT values ('2021-05-10','10:10:00',1,12345678)
+select * from VACCINATION_APPOINTMENT
+
 CREATE TABLE INSTITUTION (
 id INT PRIMARY KEY,
 institution_name VARCHAR (50)
