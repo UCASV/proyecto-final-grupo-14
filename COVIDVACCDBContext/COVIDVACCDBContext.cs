@@ -57,7 +57,7 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
 
                 entity.Property(e => e.CitizenId)
                     .IsRequired()
-                    .HasMaxLength(8)
+                    .HasMaxLength(9)
                     .IsUnicode(false)
                     .HasColumnName("citizen_id");
 
@@ -131,12 +131,12 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
             modelBuilder.Entity<Citizen>(entity =>
             {
                 entity.HasKey(e => e.Dui)
-                    .HasName("PK__CITIZEN__D876F1BEC1DA0403");
+                    .HasName("PK__CITIZEN__D876F1BEECC3C454");
 
                 entity.ToTable("CITIZEN");
 
                 entity.Property(e => e.Dui)
-                    .HasMaxLength(8)
+                    .HasMaxLength(9)
                     .IsUnicode(false)
                     .HasColumnName("dui");
 
@@ -186,7 +186,7 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
 
                 entity.Property(e => e.CitizenId)
                     .IsRequired()
-                    .HasMaxLength(8)
+                    .HasMaxLength(9)
                     .IsUnicode(false)
                     .HasColumnName("citizen_id");
 
@@ -344,14 +344,13 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
 
             modelBuilder.Entity<LoginRecord>(entity =>
             {
-                entity.HasKey(e => new { e.EmployeeId, e.CabinId })
-                    .HasName("PK_cab_emp");
-
                 entity.ToTable("LOGIN_RECORD");
 
-                entity.Property(e => e.EmployeeId).HasColumnName("employee_id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.CabinId).HasColumnName("cabin_id");
+
+                entity.Property(e => e.EmployeeId).HasColumnName("employee_id");
 
                 entity.Property(e => e.LoginTime)
                     .HasColumnType("datetime")
@@ -361,13 +360,13 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
                     .WithMany(p => p.LoginRecords)
                     .HasForeignKey(d => d.CabinId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("PK_cab");
+                    .HasConstraintName("FK__LOGIN_REC__cabin__619B8048");
 
                 entity.HasOne(d => d.Employee)
                     .WithMany(p => p.LoginRecords)
                     .HasForeignKey(d => d.EmployeeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("PK_emp");
+                    .HasConstraintName("FK__LOGIN_REC__emplo__60A75C0F");
             });
 
             modelBuilder.Entity<SideEffect>(entity =>
@@ -432,7 +431,7 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
 
                 entity.Property(e => e.CitizenId)
                     .IsRequired()
-                    .HasMaxLength(8)
+                    .HasMaxLength(9)
                     .IsUnicode(false)
                     .HasColumnName("citizen_id");
 
@@ -463,15 +462,21 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
 
                 entity.Property(e => e.SideEffectsId).HasColumnName("side_effects_id");
 
-                entity.Property(e => e.VaccAppId).HasColumnName("vacc_app_id");
+                entity.Property(e => e.VaccinationAppId).HasColumnName("vacc_app_id");
 
-                entity.Property(e => e.VaccTime).HasColumnName("vacc_time");
+                entity.Property(e => e.VaccinationTime).HasColumnName("vacc_time");
 
                 entity.HasOne(d => d.SideEffects)
                     .WithMany(p => p.VaccinationProcesses)
                     .HasForeignKey(d => d.SideEffectsId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__VACCINATI__side___68487DD7");
+
+                entity.HasOne(d => d.VaccApp)
+                    .WithMany(p => p.VaccinationProcesses)
+                    .HasForeignKey(d => d.VaccAppId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__VACCINATI__vacc___787EE5A0");
             });
 
             OnModelCreatingPartial(modelBuilder);
@@ -480,3 +485,7 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
+
+
+
+

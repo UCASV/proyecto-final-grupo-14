@@ -47,11 +47,13 @@ namespace COVIDVACCSYSTEM.View
             this.CityCB = new System.Windows.Forms.ComboBox();
             this.EmailTB = new System.Windows.Forms.TextBox();
             this.PhoneNumberTB = new System.Windows.Forms.TextBox();
-            this.IllnessLB = new System.Windows.Forms.ListBox();
             this.InstitutionCB = new System.Windows.Forms.ComboBox();
             this.TitleLbl = new System.Windows.Forms.Label();
             this.InstitutionTB = new System.Windows.Forms.TextBox();
             this.RegisterButton = new System.Windows.Forms.Button();
+            this.DuiTB = new System.Windows.Forms.TextBox();
+            this.duiLbl = new System.Windows.Forms.Label();
+            this.ailmentLB = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // FirstNameLbl
@@ -59,7 +61,7 @@ namespace COVIDVACCSYSTEM.View
             this.FirstNameLbl.BackColor = System.Drawing.Color.Transparent;
             this.FirstNameLbl.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.FirstNameLbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.FirstNameLbl.Location = new System.Drawing.Point(224, 99);
+            this.FirstNameLbl.Location = new System.Drawing.Point(124, 99);
             this.FirstNameLbl.Name = "FirstNameLbl";
             this.FirstNameLbl.Size = new System.Drawing.Size(150, 39);
             this.FirstNameLbl.TabIndex = 0;
@@ -71,7 +73,7 @@ namespace COVIDVACCSYSTEM.View
             this.LastNameLbl.BackColor = System.Drawing.Color.Transparent;
             this.LastNameLbl.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.LastNameLbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.LastNameLbl.Location = new System.Drawing.Point(582, 99);
+            this.LastNameLbl.Location = new System.Drawing.Point(448, 99);
             this.LastNameLbl.Name = "LastNameLbl";
             this.LastNameLbl.Size = new System.Drawing.Size(150, 39);
             this.LastNameLbl.TabIndex = 1;
@@ -155,7 +157,7 @@ namespace COVIDVACCSYSTEM.View
             this.FirstNameTB.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FirstNameTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FirstNameTB.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.FirstNameTB.Location = new System.Drawing.Point(181, 141);
+            this.FirstNameTB.Location = new System.Drawing.Point(81, 141);
             this.FirstNameTB.Name = "FirstNameTB";
             this.FirstNameTB.Size = new System.Drawing.Size(252, 28);
             this.FirstNameTB.TabIndex = 8;
@@ -164,7 +166,7 @@ namespace COVIDVACCSYSTEM.View
             // LastNameTB
             // 
             this.LastNameTB.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.LastNameTB.Location = new System.Drawing.Point(529, 140);
+            this.LastNameTB.Location = new System.Drawing.Point(393, 141);
             this.LastNameTB.Name = "LastNameTB";
             this.LastNameTB.Size = new System.Drawing.Size(250, 28);
             this.LastNameTB.TabIndex = 9;
@@ -191,6 +193,7 @@ namespace COVIDVACCSYSTEM.View
             this.DepartmentCB.Size = new System.Drawing.Size(250, 29);
             this.DepartmentCB.TabIndex = 11;
             this.DepartmentCB.Text = "Departamento";
+            this.DepartmentCB.SelectionChangeCommitted += new System.EventHandler(this.DepartmentCB_SelectionChangeCommitted);
             // 
             // CityCB
             // 
@@ -217,19 +220,6 @@ namespace COVIDVACCSYSTEM.View
             this.PhoneNumberTB.Name = "PhoneNumberTB";
             this.PhoneNumberTB.Size = new System.Drawing.Size(250, 28);
             this.PhoneNumberTB.TabIndex = 14;
-            // 
-            // IllnessLB
-            // 
-            this.IllnessLB.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.IllnessLB.FormattingEnabled = true;
-            this.IllnessLB.ItemHeight = 21;
-            this.IllnessLB.Location = new System.Drawing.Point(467, 569);
-            this.IllnessLB.MultiColumn = true;
-            this.IllnessLB.Name = "IllnessLB";
-            this.IllnessLB.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.IllnessLB.Size = new System.Drawing.Size(248, 25);
-            this.IllnessLB.Sorted = true;
-            this.IllnessLB.TabIndex = 15;
             // 
             // InstitutionCB
             // 
@@ -267,12 +257,48 @@ namespace COVIDVACCSYSTEM.View
             this.RegisterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisterButton.Font = new System.Drawing.Font("Bahnschrift", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.RegisterButton.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (218)))), ((int) (((byte) (218)))), ((int) (((byte) (218)))));
-            this.RegisterButton.Location = new System.Drawing.Point(393, 630);
+            this.RegisterButton.Location = new System.Drawing.Point(393, 648);
             this.RegisterButton.Name = "RegisterButton";
             this.RegisterButton.Size = new System.Drawing.Size(165, 37);
             this.RegisterButton.TabIndex = 19;
             this.RegisterButton.Text = "Registrar";
             this.RegisterButton.UseVisualStyleBackColor = false;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
+            // 
+            // DuiTB
+            // 
+            this.DuiTB.Font = new System.Drawing.Font("Century Gothic", 10.2F);
+            this.DuiTB.Location = new System.Drawing.Point(682, 141);
+            this.DuiTB.Name = "DuiTB";
+            this.DuiTB.Size = new System.Drawing.Size(250, 28);
+            this.DuiTB.TabIndex = 20;
+            // 
+            // duiLbl
+            // 
+            this.duiLbl.BackColor = System.Drawing.Color.Transparent;
+            this.duiLbl.Font = new System.Drawing.Font("Century Gothic", 10.2F);
+            this.duiLbl.ForeColor = System.Drawing.Color.SlateGray;
+            this.duiLbl.Location = new System.Drawing.Point(732, 99);
+            this.duiLbl.Name = "duiLbl";
+            this.duiLbl.Size = new System.Drawing.Size(150, 39);
+            this.duiLbl.TabIndex = 21;
+            this.duiLbl.Text = "DUI";
+            this.duiLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ailmentLB
+            // 
+            this.ailmentLB.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.ailmentLB.ColumnWidth = 250;
+            this.ailmentLB.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.ailmentLB.FormattingEnabled = true;
+            this.ailmentLB.ItemHeight = 21;
+            this.ailmentLB.Location = new System.Drawing.Point(465, 554);
+            this.ailmentLB.MultiColumn = true;
+            this.ailmentLB.Name = "ailmentLB";
+            this.ailmentLB.ScrollAlwaysVisible = true;
+            this.ailmentLB.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.ailmentLB.Size = new System.Drawing.Size(465, 88);
+            this.ailmentLB.TabIndex = 22;
             // 
             // CitizenRegistration
             // 
@@ -282,11 +308,13 @@ namespace COVIDVACCSYSTEM.View
             this.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(964, 697);
+            this.Controls.Add(this.ailmentLB);
+            this.Controls.Add(this.duiLbl);
+            this.Controls.Add(this.DuiTB);
             this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.InstitutionTB);
             this.Controls.Add(this.TitleLbl);
             this.Controls.Add(this.InstitutionCB);
-            this.Controls.Add(this.IllnessLB);
             this.Controls.Add(this.PhoneNumberTB);
             this.Controls.Add(this.EmailTB);
             this.Controls.Add(this.CityCB);
@@ -307,10 +335,17 @@ namespace COVIDVACCSYSTEM.View
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CitizenRegistration";
-            
+            this.Load += new System.EventHandler(this.CitizenRegistration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ListBox ailmentLB;
+
+        private System.Windows.Forms.ListBox listBox1;
+
+        private System.Windows.Forms.TextBox DuiTB;
+        private System.Windows.Forms.Label duiLbl;
 
         private System.Windows.Forms.Button RegisterButton;
 
@@ -319,8 +354,6 @@ namespace COVIDVACCSYSTEM.View
         private System.Windows.Forms.Label TitleLbl;
 
         private System.Windows.Forms.ComboBox InstitutionCB;
-
-        private System.Windows.Forms.ListBox IllnessLB;
 
 
         private System.Windows.Forms.TextBox EmailTB;
