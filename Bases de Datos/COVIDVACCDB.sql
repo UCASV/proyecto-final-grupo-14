@@ -1,123 +1,120 @@
 CREATE DATABASE COVIDVACCDB;
-USE COVIDVACCDB; 
+USE COVIDVACCDB;
 SET LANGUAGE us_english;
 
 CREATE TABLE CITIZEN (
-dui VARCHAR(9) PRIMARY KEY,
-first_name VARCHAR (50) NOT NULL,
-last_name VARCHAR (50) NOT NULL,
-birthday DATE NOT NULL,
-email VARCHAR (50),
-city_id INT NOT NULL,
-institution_id INT NOT NULL,
+                         dui VARCHAR(9) PRIMARY KEY,
+                         first_name VARCHAR (50) NOT NULL,
+                         last_name VARCHAR (50) NOT NULL,
+                         birthday DATE NOT NULL,
+                         email VARCHAR (50),
+                         city_id INT NOT NULL,
+                         institution_id INT NOT NULL,
 );
 
 
 CREATE TABLE CITIZEN_PHONE_NUMBER (
-id INT PRIMARY KEY IDENTITY,
-phone_number VARCHAR(8) NOT NULL,
-citizen_id VARCHAR(9) NOT NULL
+                                      id INT PRIMARY KEY IDENTITY,
+                                      phone_number VARCHAR(8) NOT NULL,
+                                      citizen_id VARCHAR(9) NOT NULL
 );
 
 CREATE TABLE INSTITUTION (
-id INT PRIMARY KEY,
-institution_name VARCHAR (50)
+                             id INT PRIMARY KEY,
+                             institution_name VARCHAR (50)
 );
 
 CREATE TABLE AILMENTS (
-id INT PRIMARY KEY IDENTITY,
-illness_id INT NOT NULL,
-citizen_id VARCHAR(9) NOT NULL
+                          id INT PRIMARY KEY IDENTITY,
+                          illness_id INT NOT NULL,
+                          citizen_id VARCHAR(9) NOT NULL
 );
 
 CREATE TABLE CHRONIC_ILLNESS (
-id INT PRIMARY KEY,
-illness VARCHAR (50)
+                                 id INT PRIMARY KEY,
+                                 illness VARCHAR (50)
 );
 
 CREATE TABLE EMPLOYEE (
-id INT PRIMARY KEY IDENTITY,
-first_name VARCHAR (50) NOT NULL,
-last_name VARCHAR (50) NOT NULL,
-institutional_mail VARCHAR (50) NOT NULL,
-employee_type_id INT NOT NULL,
-city_id INT NOT NULL
+                          id INT PRIMARY KEY IDENTITY,
+                          first_name VARCHAR (50) NOT NULL,
+                          last_name VARCHAR (50) NOT NULL,
+                          institutional_mail VARCHAR (50) NOT NULL,
+                          employee_type_id INT NOT NULL,
+                          city_id INT NOT NULL
 );
 
 CREATE TABLE EMPLOYEE_TYPE(
-id INT PRIMARY KEY,
-employee_type VARCHAR (50)
+                              id INT PRIMARY KEY,
+                              employee_type VARCHAR (50)
 );
 
 CREATE TABLE LOGIN_INFO (
-id INT PRIMARY KEY IDENTITY,
-username VARCHAR (50) NOT NULL, 
-userpassword VARCHAR (50) NOT NULL,
-employee_id INT NOT NULL
+                            id INT PRIMARY KEY IDENTITY,
+                            username VARCHAR (50) NOT NULL,
+                            userpassword VARCHAR (50) NOT NULL,
+                            employee_id INT NOT NULL
 );
 
 CREATE TABLE LOGIN_RECORD(
-id INT PRIMARY KEY IDENTITY,
-employee_id INT NOT NULL,
-cabin_id INT NOT NULL,
-login_time DATETIME NOT NULL,
+                             id INT PRIMARY KEY IDENTITY,
+                             employee_id INT NOT NULL,
+                             cabin_id INT NOT NULL,
+                             login_time DATETIME NOT NULL,
 );
 
 CREATE TABLE VACCINATION_APPOINTMENT(
-id INT PRIMARY KEY IDENTITY,
-app_date DATE NOT NULL,
-app_time TIME NOT NULL,
-cabin_id INT NOT NULL,
-citizen_id VARCHAR(9) NOT NULL
+                                        id INT PRIMARY KEY IDENTITY,
+                                        app_date DATE NOT NULL,
+                                        app_time TIME NOT NULL,
+                                        cabin_id INT NOT NULL,
+                                        citizen_id VARCHAR(9) NOT NULL
 );
 
 CREATE TABLE VACCINATION_PROCESS(
-id INT PRIMARY KEY IDENTITY,
-process_date DATE NOT NULL,
-process_time TIME NOT NULL,
-vacc_time TIME NOT NULL,
-vacc_app_id INT NOT NULL,
-side_effects_id INT NOT NULL,
+                                    id INT PRIMARY KEY IDENTITY,
+                                    process_date DATE NOT NULL,
+                                    process_time TIME NOT NULL,
+                                    vacc_time TIME NOT NULL,
+                                    vacc_app_id INT NOT NULL,
+                                    side_effects_id INT NOT NULL,
 );
 
-CREATE TABLE EMPLOYEEXPROCESS(
-id INT PRIMARY KEY IDENTITY,
-employee_id INT NOT NULL,
-vacc_process_id INT NOT NULL
-);
 
+
+delete from CITIZEN_PHONE_NUMBER
 CREATE TABLE SYMPTOM(
-id INT PRIMARY KEY,
-symptom VARCHAR(30)
+                        id INT PRIMARY KEY,
+                        symptom VARCHAR(30)
 );
 
 CREATE TABLE SIDE_EFFECTS(
-id INT PRIMARY KEY IDENTITY,
-symptom_id INT NOT NULL,
-symptom_time TIME NOT NULL
+                             id INT PRIMARY KEY IDENTITY,
+                             symptom_id INT NOT NULL,
+                             symptom_time TIME NOT NULL
 );
 
 CREATE TABLE CABIN(
-id INT PRIMARY KEY IDENTITY,
-email VARCHAR(50) NOT NULL,
-city_id INT NOT NULL
+                      id INT PRIMARY KEY IDENTITY,
+                      email VARCHAR(50) NOT NULL,
+                      city_id INT NOT NULL
 );
 
 CREATE TABLE CABIN_PHONE_NUMBER(
-id INT PRIMARY KEY IDENTITY,
-phone_number INT NOT NULL,
-cabin_id INT NOT NULL
+                                   id INT PRIMARY KEY IDENTITY,
+                                   phone_number INT NOT NULL,
+                                   cabin_id INT NOT NULL
 );
 
 CREATE TABLE CITY(
-id INT PRIMARY KEY IDENTITY,
-city_name VARCHAR(50),
-state_id INT NOT NULL
+                     id INT PRIMARY KEY IDENTITY,
+                     city_name VARCHAR(50),
+                     state_id INT NOT NULL
 );
 
 CREATE TABLE STATE(
-id INT PRIMARY KEY,
-state_name VARCHAR(50) NOT NULL
+                      id INT PRIMARY KEY,
+                      state_name VARCHAR(50) NOT NULL
 );
 
 
@@ -137,10 +134,11 @@ ALTER TABLE CABIN_PHONE_NUMBER ADD FOREIGN KEY(cabin_id) REFERENCES CABIN (id);
 ALTER TABLE CABIN ADD FOREIGN KEY(city_id) REFERENCES CITY (id);
 ALTER TABLE CITY ADD FOREIGN KEY(state_id) REFERENCES STATE (id);
 ALTER TABLE LOGIN_INFO ADD FOREIGN KEY (employee_id) REFERENCES EMPLOYEE (id);
-ALTER TABLE EMPLOYEEXPROCESS ADD FOREIGN KEY (employee_id) REFERENCES EMPLOYEE (id);
-ALTER TABLE EMPLOYEEXPROCESS ADD FOREIGN KEY (vacc_process_id) REFERENCES VACCINATION_PROCESS(id);
-ALTER TABLE VACCINATION_PROCESS ADD FOREIGN KEY (side_effects_id) REFERENCES SIDE_EFFECTS(id);
 ALTER TABLE VACCINATION_PROCESS ADD FOREIGN KEY (vacc_app_id) REFERENCES VACCINATION_APPOINTMENT(id);
+ALTER TABLE SIDE_EFFECTS ADD FOREIGN KEY (vacc_process) REFERENCES VACCINATION_PROCESS(id);
+ALTER TABLE SIDE_EFFECTS ADD vacc_process INT;
+ALTER TABLE VACCINATION_PROCESS DROP COLUMN side_effects_id;
+
 
 INSERT INTO SYMPTOM VALUES (1, 'DOLOR EN AREA DE INYECCION');
 INSERT INTO SYMPTOM VALUES (2, 'SENSIBILIDAD');
@@ -522,19 +520,19 @@ INSERT INTO EMPLOYEE VALUES ('Ágata', 'Garcia Ferrera', 'agarciaferrera@minsal.c
 INSERT INTO EMPLOYEE VALUES ('Sofía', 'Benet Mariscal', 'sbenetmariscal@minsal.com.sv', 3, 27);
 INSERT INTO EMPLOYEE VALUES ('Mariano', 'Juárez', 'mjuarez@minsal.com.sv', 3, 28);
 
-/*EMPLEADOS AHUACHAPAN*/ 
+/*EMPLEADOS AHUACHAPAN*/
 INSERT INTO EMPLOYEE VALUES ('Paca', 'Saez Saura', 'psaezsaura@minsal.com.sv', 1, 29);
 INSERT INTO EMPLOYEE VALUES ('Calixta', 'Nebot Vélez', 'cnebotvelez@minsal.com.sv', 2, 30);
 INSERT INTO EMPLOYEE VALUES ('Lisandro Moisés', 'Márquez Catalán', 'lmarquezcatalan@minsal.com.sv', 2, 31);
 INSERT INTO EMPLOYEE VALUES ('Albano', 'de Bilbao', 'adebilbao@minsal.com.sv', 3, 32);
 INSERT INTO EMPLOYEE VALUES ('Modesta', 'Rivera-Alvarez', 'mriveraalvarez@minsal.com.sv', 3, 33);
- 
+
 INSERT INTO EMPLOYEE VALUES ('Soraya', 'Ureña Peinado', 'surenapeinado@minsal.com.sv', 1, 34);
 INSERT INTO EMPLOYEE VALUES ('Leyre', 'Torrens', 'ltorrens@minsal.com.sv', 2, 35);
 INSERT INTO EMPLOYEE VALUES ('Laura Matilde', 'Vives Ureña', 'lvivesurena@minsal.com.sv', 2, 36);
 INSERT INTO EMPLOYEE VALUES ('Nicolasa', 'Escamilla Varela', 'nescamillavarela@minsal.com.sv', 3, 37);
 INSERT INTO EMPLOYEE VALUES ('Marino', 'Losa Cuevas', 'mlosacuevas@minsal.com.sv', 3, 37);
- 
+
 INSERT INTO EMPLOYEE VALUES ('Toribio', 'Dávila Pedro', 'tdavilapedro@minsal.com.sv', 1, 33);
 INSERT INTO EMPLOYEE VALUES ('Vicente', 'Ruano-Tomé', 'vruanotome@minsal.com.sv', 2, 33);
 INSERT INTO EMPLOYEE VALUES ('Inés', 'Roldán Coloma', 'iroldancoloma@minsal.com.sv', 2, 34);
@@ -554,7 +552,7 @@ INSERT INTO EMPLOYEE VALUES ('Gisela', 'de Codina', 'gdecodina@minsal.com.sv', 2
 INSERT INTO EMPLOYEE VALUES ('Aránzazu', 'Escamilla Correa', 'aescamillacorrea@minsal.com.sv', 2, 48);
 INSERT INTO EMPLOYEE VALUES ('Alma', 'Maldonado-Piña', 'amaldonadopina@minsal.com.sv', 3, 49);
 INSERT INTO EMPLOYEE VALUES ('Rosenda', 'Rivas Valcárcel', 'rrivasvalcarcel@minsal.com.sv', 3, 50);
-  
+
 INSERT INTO EMPLOYEE VALUES ('Elba', 'Costa Barreda', 'ecostabarreda@minsal.com.sv', 1, 49);
 INSERT INTO EMPLOYEE VALUES ('Íngrid', 'Adadia Torrecilla', 'iadadiatorrecilla@minsal.com.sv', 2, 51);
 INSERT INTO EMPLOYEE VALUES ('María Luisa', 'Sanchez-Godoy', 'msanchezgodoy@minsal.com.sv', 2, 52);
@@ -586,13 +584,13 @@ INSERT INTO EMPLOYEE VALUES ('Gilberto', 'Campo Segura', 'gcamposegura@minsal.co
 INSERT INTO EMPLOYEE VALUES ('Donato', 'Fabra', 'dfabra@minsal.com.sv', 2, 109);
 INSERT INTO EMPLOYEE VALUES ('Santiago', 'Tur Amorós', 'stusamoros@minsal.com.sv', 3, 106);
 INSERT INTO EMPLOYEE VALUES ('Segismundo', 'del Coronado', 'sdelcoronado@minsal.com.sv', 3, 107);
- 
+
 INSERT INTO EMPLOYEE VALUES ('Belen', 'Baquero Almansa', 'bbaqueroalmansa@minsal.com.sv', 1, 106);
 INSERT INTO EMPLOYEE VALUES ('Saturnino', 'Huguet Somoza', 'shuguetsomoza@minsal.com.sv', 2, 108);
 INSERT INTO EMPLOYEE VALUES ('Asunción', 'Marcos', 'amarcos@minsal.com.sv', 2, 110);
 INSERT INTO EMPLOYEE VALUES ('Teo', 'Vara Molina', 'tvaramolina@minsal.com.sv', 3, 104);
 INSERT INTO EMPLOYEE VALUES ('Jenny', 'Pou Sanmartín', 'jpousanmartin@minsal.com.sv', 3, 105);
- 
+
 INSERT INTO EMPLOYEE VALUES ('Nydia', 'Alsina Amo', 'nalsinaamo@minsal.com.sv', 1, 107);
 INSERT INTO EMPLOYEE VALUES ('Emperatriz', 'Calderón Múgica', 'ecalderonmugica@minsal.com.sv', 2, 109);
 INSERT INTO EMPLOYEE VALUES ('Feliciana', 'Daza Segura', 'fdazasegura@minsal.com.sv', 2, 106);
@@ -605,7 +603,7 @@ INSERT INTO EMPLOYEE VALUES ('Florentina', 'Ramírez Perez', 'framirezperez@minsa
 INSERT INTO EMPLOYEE VALUES ('Fernanda', 'Elorza Velasco', 'felorzavelasco@minsal.com.sv', 2, 125);
 INSERT INTO EMPLOYEE VALUES ('Vasco Josep', 'Guerra Cazorla', 'vguerracazorla@minsal.com.sv', 3, 125);
 INSERT INTO EMPLOYEE VALUES ('Lope', 'Arenas Narváez', 'larenasnarvaez@minsal.com.sv', 3, 126);
- 
+
 INSERT INTO EMPLOYEE VALUES ('Valerio', 'Alberto Armas', 'valbertoarmas@minsal.com.sv', 1, 118);
 INSERT INTO EMPLOYEE VALUES ('Mateo', 'Rovira Arroyo', 'mroviraarroyo@minsal.com.sv', 2, 119);
 INSERT INTO EMPLOYEE VALUES ('Susana', 'Valera Cañete', 'svaleracanete@minsal.com.sv', 2, 119);
@@ -617,7 +615,7 @@ INSERT INTO EMPLOYEE VALUES ('Dionisio', 'de Solera', 'ddesolera@minsal.com.sv',
 INSERT INTO EMPLOYEE VALUES ('Ámbar', 'Tomé Alcázar', 'atomealcazar@minsal.com.sv', 2, 123);
 INSERT INTO EMPLOYEE VALUES ('Aitana', 'Fonseca Solana', 'afonsecasolana@minsal.com.sv', 3, 126);
 INSERT INTO EMPLOYEE VALUES ('Vicenta', 'Gilabert Palacio', 'vgilabertpalacio@minsal.com.sv', 3, 126);
- 
+
 /*EMPLEADOS LA PAZ*/
 INSERT INTO EMPLOYEE VALUES ('José Luis', 'Ordóñez', 'jordonez@minsal.com.sv', 1, 131);
 INSERT INTO EMPLOYEE VALUES ('Octavio', 'Pareja Canales', 'oparejacanales@minsal.com.sv', 2, 132);

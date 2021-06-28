@@ -9,7 +9,6 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
     {
         public Employee()
         {
-            Employeexprocesses = new HashSet<Employeexprocess>();
             LoginInfos = new HashSet<LoginInfo>();
             LoginRecords = new HashSet<LoginRecord>();
         }
@@ -23,7 +22,6 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
 
         public virtual City City { get; set; }
         public virtual EmployeeType EmployeeType { get; set; }
-        public virtual ICollection<Employeexprocess> Employeexprocesses { get; set; }
         public virtual ICollection<LoginInfo> LoginInfos { get; set; }
         public virtual ICollection<LoginRecord> LoginRecords { get; set; }
     }

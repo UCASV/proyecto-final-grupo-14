@@ -23,7 +23,7 @@ namespace COVIDVACCSYSTEM.View
                 _sqlConnection.Open();
 
                 string cmd = "SELECT username, userpassword FROM LOGIN_INFO WHERE username = '" + UsernameTB.Text +
-                             "' AND userpassword = '" + PasswordTB.Text + "'";
+                            "' AND userpassword = '" + PasswordTB.Text + "'";
 
                 _sqlCommand = new SqlCommand(cmd, _sqlConnection);
                 _sqlReader = _sqlCommand.ExecuteReader();
@@ -31,7 +31,6 @@ namespace COVIDVACCSYSTEM.View
                 if (_sqlReader.HasRows)
                 {
                     Form mainWindow = new MainWindow();
-                    LoginRecordSaver();
                     this.Hide();
                     mainWindow.Show();
                     
@@ -84,6 +83,7 @@ namespace COVIDVACCSYSTEM.View
         private void LogInButton_Click(object sender, EventArgs e)
         {
             ManagerLogin();
+            LoginRecordSaver();
         }
         
 

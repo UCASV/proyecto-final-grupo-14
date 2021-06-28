@@ -26,7 +26,6 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<EmployeeType> EmployeeTypes { get; set; }
-        public virtual DbSet<Employeexprocess> Employeexprocesses { get; set; }
         public virtual DbSet<Institution> Institutions { get; set; }
         public virtual DbSet<LoginInfo> LoginInfos { get; set; }
         public virtual DbSet<LoginRecord> LoginRecords { get; set; }
@@ -278,29 +277,6 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
                     .HasColumnName("employee_type");
             });
 
-            modelBuilder.Entity<Employeexprocess>(entity =>
-            {
-                entity.ToTable("EMPLOYEEXPROCESS");
-
-                entity.Property(e => e.Id).HasColumnName("id");
-
-                entity.Property(e => e.EmployeeId).HasColumnName("employee_id");
-
-                entity.Property(e => e.VaccProcessId).HasColumnName("vacc_process_id");
-
-                entity.HasOne(d => d.Employee)
-                    .WithMany(p => p.Employeexprocesses)
-                    .HasForeignKey(d => d.EmployeeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__EMPLOYEEX__emplo__66603565");
-
-                entity.HasOne(d => d.VaccProcess)
-                    .WithMany(p => p.Employeexprocesses)
-                    .HasForeignKey(d => d.VaccProcessId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__EMPLOYEEX__vacc___6754599E");
-            });
-
             modelBuilder.Entity<Institution>(entity =>
             {
                 entity.ToTable("INSTITUTION");
@@ -379,11 +355,18 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
 
                 entity.Property(e => e.SymptomTime).HasColumnName("symptom_time");
 
+                entity.Property(e => e.VaccProcess).HasColumnName("vacc_process");
+
                 entity.HasOne(d => d.Symptom)
                     .WithMany(p => p.SideEffects)
                     .HasForeignKey(d => d.SymptomId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__SIDE_EFFE__sympt__59063A47");
+
+                entity.HasOne(d => d.VaccProcessNavigation)
+                    .WithMany(p => p.SideEffects)
+                    .HasForeignKey(d => d.VaccProcess)
+                    .HasConstraintName("FK__SIDE_EFFE__vacc___02084FDA");
             });
 
             modelBuilder.Entity<State>(entity =>
@@ -460,17 +443,9 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
 
                 entity.Property(e => e.ProcessTime).HasColumnName("process_time");
 
-                entity.Property(e => e.SideEffectsId).HasColumnName("side_effects_id");
+                entity.Property(e => e.VaccAppId).HasColumnName("vacc_app_id");
 
-                entity.Property(e => e.VaccinationAppId).HasColumnName("vacc_app_id");
-
-                entity.Property(e => e.VaccinationTime).HasColumnName("vacc_time");
-
-                entity.HasOne(d => d.SideEffects)
-                    .WithMany(p => p.VaccinationProcesses)
-                    .HasForeignKey(d => d.SideEffectsId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__VACCINATI__side___68487DD7");
+                entity.Property(e => e.VaccTime).HasColumnName("vacc_time");
 
                 entity.HasOne(d => d.VaccApp)
                     .WithMany(p => p.VaccinationProcesses)
@@ -485,7 +460,3 @@ namespace COVIDVACCSYSTEM.COVIDVACCDBContext
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
-
-
-
-

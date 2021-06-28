@@ -71,9 +71,8 @@ namespace COVIDVACCSYSTEM.ViewModels
                 Id = e.Id,
                 ProcessDate = e.ProcessDate,
                 ProcessTime = e.ProcessTime,
-                VaccTime = e.VaccinationTime,
-                VaccAppId = e.VaccinationAppId,
-                SideEffectsId = e.SideEffectsId
+                VaccTime = e.VaccTime,
+                VaccAppId = e.VaccAppId,
             };
         }
         

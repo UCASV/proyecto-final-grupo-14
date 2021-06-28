@@ -137,7 +137,6 @@ namespace COVIDVACCSYSTEM.View
 
         }
     }
-}
 
 
 
