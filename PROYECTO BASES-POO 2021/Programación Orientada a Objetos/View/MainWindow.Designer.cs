@@ -37,9 +37,7 @@ namespace COVIDVACCSYSTEM.View
             this.panel6 = new System.Windows.Forms.Panel();
             this.HomePB = new System.Windows.Forms.PictureBox();
             this.HomeButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.StatisticsButtonPB = new System.Windows.Forms.PictureBox();
-            this.StatisticsButton = new System.Windows.Forms.Button();
+            
             this.SINAVACCPB = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -61,7 +59,7 @@ namespace COVIDVACCSYSTEM.View
             this.SINAVACC19TT = new System.Windows.Forms.ToolTip(this.components);
             this.ControlPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.HomePB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.StatisticsButtonPB)).BeginInit();
+            
             ((System.ComponentModel.ISupportInitialize) (this.SINAVACCPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.NewAppointmentIconPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.AppointmentTrackingIconPB)).BeginInit();
@@ -79,9 +77,6 @@ namespace COVIDVACCSYSTEM.View
             this.ControlPanel.Controls.Add(this.panel6);
             this.ControlPanel.Controls.Add(this.HomePB);
             this.ControlPanel.Controls.Add(this.HomeButton);
-            this.ControlPanel.Controls.Add(this.panel1);
-            this.ControlPanel.Controls.Add(this.StatisticsButtonPB);
-            this.ControlPanel.Controls.Add(this.StatisticsButton);
             this.ControlPanel.Controls.Add(this.SINAVACCPB);
             this.ControlPanel.Controls.Add(this.panel3);
             this.ControlPanel.Controls.Add(this.panel4);
@@ -133,40 +128,6 @@ namespace COVIDVACCSYSTEM.View
             this.HomeButton.Text = "INICIO";
             this.HomeButton.UseVisualStyleBackColor = true;
             this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (218)))), ((int) (((byte) (218)))), ((int) (((byte) (218)))));
-            this.panel1.Location = new System.Drawing.Point(11, 593);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 48);
-            this.panel1.TabIndex = 8;
-            // 
-            // StatisticsButtonPB
-            // 
-            this.StatisticsButtonPB.BackColor = System.Drawing.Color.SlateGray;
-            this.StatisticsButtonPB.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("StatisticsButtonPB.BackgroundImage")));
-            this.StatisticsButtonPB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.StatisticsButtonPB.Location = new System.Drawing.Point(20, 591);
-            this.StatisticsButtonPB.Name = "StatisticsButtonPB";
-            this.StatisticsButtonPB.Size = new System.Drawing.Size(44, 50);
-            this.StatisticsButtonPB.TabIndex = 9;
-            this.StatisticsButtonPB.TabStop = false;
-            // 
-            // StatisticsButton
-            // 
-            this.StatisticsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.StatisticsButton.FlatAppearance.BorderColor = System.Drawing.Color.SlateGray;
-            this.StatisticsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StatisticsButton.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.StatisticsButton.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (218)))), ((int) (((byte) (218)))), ((int) (((byte) (218)))));
-            this.StatisticsButton.Location = new System.Drawing.Point(72, 591);
-            this.StatisticsButton.Name = "StatisticsButton";
-            this.StatisticsButton.Size = new System.Drawing.Size(258, 50);
-            this.StatisticsButton.TabIndex = 7;
-            this.StatisticsButton.Text = "ESTADISTICAS";
-            this.StatisticsButton.UseVisualStyleBackColor = true;
-            this.StatisticsButton.Click += new System.EventHandler(this.StatisticsButton_Click);
             // 
             // SINAVACCPB
             // 
@@ -403,7 +364,7 @@ namespace COVIDVACCSYSTEM.View
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.ControlPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.HomePB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.StatisticsButtonPB)).EndInit();
+            
             ((System.ComponentModel.ISupportInitialize) (this.SINAVACCPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.NewAppointmentIconPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.AppointmentTrackingIconPB)).EndInit();
@@ -424,9 +385,8 @@ namespace COVIDVACCSYSTEM.View
 
         private System.Windows.Forms.ToolTip SINAVACC19TT;
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox StatisticsButtonPB;
-        private System.Windows.Forms.Button StatisticsButton;
+        
+        
 
         private System.Windows.Forms.PictureBox MoveButtonPB;
 

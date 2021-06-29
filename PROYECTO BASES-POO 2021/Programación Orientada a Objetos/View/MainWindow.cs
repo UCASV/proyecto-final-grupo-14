@@ -3,6 +3,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using COVIDVACCSYSTEM.COVIDVACCDBContext;
+using COVIDVACCSYSTEM.POO.View;
 
 namespace COVIDVACCSYSTEM.View
 {
@@ -63,14 +64,10 @@ namespace COVIDVACCSYSTEM.View
             OpenForm(new VaccinationProcess());
         }
         
-        private void StatisticsButton_Click(object? sender, EventArgs e)
-        {
-            OpenForm(new Statistics());
-        }
         
         private void SINAVACCPB_Click(object sender, EventArgs e)
         {
-            OpenForm(new SINAVACC19());
+            OpenForm(new Sinavacc19());
         }
         
         private void CloseButtonPB_Click(object sender, EventArgs e)

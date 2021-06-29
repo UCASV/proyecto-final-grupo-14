@@ -55,10 +55,7 @@ namespace COVIDVACCSYSTEM.View
                    Random rnd = new Random();
                    int cabinid = rnd.Next(1, 42);
 
-
-
-
-               VaccinationAppointment Firstapp = new VaccinationAppointment
+                   VaccinationAppointment Firstapp = new VaccinationAppointment
                 {
 
                   AppDate = DateVaccine,
@@ -69,6 +66,7 @@ namespace COVIDVACCSYSTEM.View
 
                 };
                VaccApp.Create(Firstapp);
+               
                VaccinationAppointment Secondapp = new VaccinationAppointment
                {
 
@@ -91,10 +89,7 @@ namespace COVIDVACCSYSTEM.View
 
             }
 
-
-
-
-          }
+        }
       }
   } 
 

@@ -42,8 +42,14 @@ namespace COVIDVACCSYSTEM.View
             this.CitizenLbl = new System.Windows.Forms.Label();
             this.EnterButton = new System.Windows.Forms.Button();
             this.PrintButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize) (this.CitizenDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.AppointmentsDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // TitleLbl
@@ -51,7 +57,7 @@ namespace COVIDVACCSYSTEM.View
             this.TitleLbl.BackColor = System.Drawing.Color.Transparent;
             this.TitleLbl.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 24F, System.Drawing.FontStyle.Bold);
             this.TitleLbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.TitleLbl.Location = new System.Drawing.Point(239, 23);
+            this.TitleLbl.Location = new System.Drawing.Point(247, 25);
             this.TitleLbl.Name = "TitleLbl";
             this.TitleLbl.Size = new System.Drawing.Size(467, 62);
             this.TitleLbl.TabIndex = 0;
@@ -63,7 +69,7 @@ namespace COVIDVACCSYSTEM.View
             this.DUILbl.BackColor = System.Drawing.Color.Transparent;
             this.DUILbl.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.DUILbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.DUILbl.Location = new System.Drawing.Point(86, 121);
+            this.DUILbl.Location = new System.Drawing.Point(85, 103);
             this.DUILbl.Name = "DUILbl";
             this.DUILbl.Size = new System.Drawing.Size(289, 44);
             this.DUILbl.TabIndex = 1;
@@ -73,9 +79,9 @@ namespace COVIDVACCSYSTEM.View
             // DUITB
             // 
             this.DUITB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.DUITB.Location = new System.Drawing.Point(381, 129);
+            this.DUITB.Location = new System.Drawing.Point(380, 111);
             this.DUITB.Name = "DUITB";
-            this.DUITB.Size = new System.Drawing.Size(287, 32);
+            this.DUITB.Size = new System.Drawing.Size(208, 32);
             this.DUITB.TabIndex = 2;
             // 
             // CitizenDGV
@@ -101,13 +107,13 @@ namespace COVIDVACCSYSTEM.View
             this.CitizenDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.CitizenDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CitizenDGV.GridColor = System.Drawing.Color.SlateGray;
-            this.CitizenDGV.Location = new System.Drawing.Point(87, 322);
+            this.CitizenDGV.Location = new System.Drawing.Point(86, 205);
             this.CitizenDGV.Name = "CitizenDGV";
             this.CitizenDGV.ReadOnly = true;
             this.CitizenDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.CitizenDGV.RowTemplate.Height = 24;
             this.CitizenDGV.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.CitizenDGV.Size = new System.Drawing.Size(800, 90);
+            this.CitizenDGV.Size = new System.Drawing.Size(800, 83);
             this.CitizenDGV.TabIndex = 3;
             // 
             // AppointmentsDGV
@@ -124,11 +130,11 @@ namespace COVIDVACCSYSTEM.View
             this.AppointmentsDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.AppointmentsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AppointmentsDGV.GridColor = System.Drawing.Color.SlateGray;
-            this.AppointmentsDGV.Location = new System.Drawing.Point(87, 482);
+            this.AppointmentsDGV.Location = new System.Drawing.Point(86, 332);
             this.AppointmentsDGV.Name = "AppointmentsDGV";
             this.AppointmentsDGV.ReadOnly = true;
             this.AppointmentsDGV.RowTemplate.Height = 24;
-            this.AppointmentsDGV.Size = new System.Drawing.Size(800, 90);
+            this.AppointmentsDGV.Size = new System.Drawing.Size(800, 78);
             this.AppointmentsDGV.TabIndex = 4;
             // 
             // AppointmentLbl
@@ -136,9 +142,9 @@ namespace COVIDVACCSYSTEM.View
             this.AppointmentLbl.BackColor = System.Drawing.Color.Transparent;
             this.AppointmentLbl.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.AppointmentLbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.AppointmentLbl.Location = new System.Drawing.Point(87, 435);
+            this.AppointmentLbl.Location = new System.Drawing.Point(83, 291);
             this.AppointmentLbl.Name = "AppointmentLbl";
-            this.AppointmentLbl.Size = new System.Drawing.Size(289, 44);
+            this.AppointmentLbl.Size = new System.Drawing.Size(289, 38);
             this.AppointmentLbl.TabIndex = 5;
             this.AppointmentLbl.Text = "CITAS";
             this.AppointmentLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -148,7 +154,7 @@ namespace COVIDVACCSYSTEM.View
             this.CitizenLbl.BackColor = System.Drawing.Color.Transparent;
             this.CitizenLbl.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.CitizenLbl.ForeColor = System.Drawing.Color.SlateGray;
-            this.CitizenLbl.Location = new System.Drawing.Point(87, 275);
+            this.CitizenLbl.Location = new System.Drawing.Point(86, 158);
             this.CitizenLbl.Name = "CitizenLbl";
             this.CitizenLbl.Size = new System.Drawing.Size(289, 44);
             this.CitizenLbl.TabIndex = 6;
@@ -162,9 +168,9 @@ namespace COVIDVACCSYSTEM.View
             this.EnterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EnterButton.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.EnterButton.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (218)))), ((int) (((byte) (218)))), ((int) (((byte) (218)))));
-            this.EnterButton.Location = new System.Drawing.Point(435, 176);
+            this.EnterButton.Location = new System.Drawing.Point(604, 108);
             this.EnterButton.Name = "EnterButton";
-            this.EnterButton.Size = new System.Drawing.Size(145, 39);
+            this.EnterButton.Size = new System.Drawing.Size(122, 39);
             this.EnterButton.TabIndex = 7;
             this.EnterButton.Text = "Ingresar";
             this.EnterButton.UseVisualStyleBackColor = false;
@@ -177,13 +183,79 @@ namespace COVIDVACCSYSTEM.View
             this.PrintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PrintButton.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.PrintButton.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (218)))), ((int) (((byte) (218)))), ((int) (((byte) (218)))));
-            this.PrintButton.Location = new System.Drawing.Point(742, 617);
+            this.PrintButton.Location = new System.Drawing.Point(755, 630);
             this.PrintButton.Name = "PrintButton";
-            this.PrintButton.Size = new System.Drawing.Size(145, 39);
+            this.PrintButton.Size = new System.Drawing.Size(131, 37);
             this.PrintButton.TabIndex = 8;
             this.PrintButton.Text = "Imprimir";
             this.PrintButton.UseVisualStyleBackColor = false;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1.ForeColor = System.Drawing.Color.SlateGray;
+            this.label1.Location = new System.Drawing.Point(86, 413);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(289, 44);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "PROCESOS DE VACUNACION";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Snow;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.Color.SlateGray;
+            this.dataGridView1.Location = new System.Drawing.Point(86, 460);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(503, 84);
+            this.dataGridView1.TabIndex = 9;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.Snow;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.GridColor = System.Drawing.Color.SlateGray;
+            this.dataGridView2.Location = new System.Drawing.Point(595, 460);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(291, 130);
+            this.dataGridView2.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label2.ForeColor = System.Drawing.Color.SlateGray;
+            this.label2.Location = new System.Drawing.Point(595, 413);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(289, 44);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "EFECTOS SECUNDARIOS";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AppointmentTracking
             // 
@@ -194,6 +266,10 @@ namespace COVIDVACCSYSTEM.View
             this.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(964, 697);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.EnterButton);
             this.Controls.Add(this.CitizenLbl);
@@ -209,9 +285,17 @@ namespace COVIDVACCSYSTEM.View
             this.Text = "AppointmentTracking";
             ((System.ComponentModel.ISupportInitialize) (this.CitizenDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.AppointmentsDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label2;
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
 
         private System.Windows.Forms.Button PrintButton;
 
