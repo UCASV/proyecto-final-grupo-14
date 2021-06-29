@@ -40,7 +40,7 @@ _Para ejecutar el proyecto necesitas:_
 
 💡 Descarga [SINAVACC-19](https://github.com/UCASV/proyecto-final-grupo-14/releases/tag/v1.0) - _contiene los archivos que necesitas para ejecutar el proyecto_
 
-💡 Abre en el SSMS el archivo COVIDVACCDB.script y ejecutalo
+💡 Abre en el SSMS el archivo COVIDVACCDB.script y LoginRecord_StoredProcedure.sql, ejecutalos
 
 💡 Abre la solución COVIDVACCSYSTEM en JETBRAINS RIDER
 
