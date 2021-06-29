@@ -102,14 +102,14 @@ namespace COVIDVACCSYSTEM.View
                   
                     _context.SaveChanges();
 
-                    MessageBox.Show("Ciudadano creado exitosamente", "Ciudadano creado", MessageBoxButtons.OK);
+                    MessageBox.Show("Ciudadano creado exitosamente", "Ciudadano creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                     MessageBox.Show("Usuario no puede ser registrado ya que no es pertenece a un grupo de prioridad o DUI ingresado erroneamente",
-                        "REGISTRO DE USUARIO INVALIDO", MessageBoxButtons.OK);
+                        "REGISTRO DE USUARIO INVALIDO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-                MessageBox.Show("El ciudadano ya ha sido registrado en la pltaforma con anterioridad", "ERROR", MessageBoxButtons.OK);
+                MessageBox.Show("El ciudadano ya ha sido registrado en la plataforma con anterioridad", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             
 
            
@@ -117,11 +117,7 @@ namespace COVIDVACCSYSTEM.View
 
         private void CitizenRegistration_Load(object sender, EventArgs e)
         {
-            DepartmentCB.DataSource = state.GetAll();
-            DepartmentCB.DisplayMember = "StateName";
-            DepartmentCB.ValueMember = "Id";
             
-
             CityCB.DataSource = cityy.GetAll();
             CityCB.DisplayMember = "CityName";
             CityCB.ValueMember = "Id";
@@ -133,9 +129,7 @@ namespace COVIDVACCSYSTEM.View
             ailmentLB.DataSource = chronic.GetAll();
             ailmentLB.DisplayMember = "Illness";
             ailmentLB.ValueMember = "Id";
-            
-            
-
+       
         }
 
       
