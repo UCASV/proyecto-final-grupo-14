@@ -22,7 +22,7 @@ namespace COVIDVACCSYSTEM.View
             {
                 _sqlConnection.Open();
 
-                string cmd = "SELECT username, userpassword FROM LOGIN_INFO, CABIN, EMPLOYEE WHERE LOGIN_INFO.employee_id = '" + EmployeeIdTB.Text + "' AND username = '" + UsernameTB.Text + "' AND userpassword = '" + PasswordTB.Text + "'";
+                string cmd = "SELECT username, userpassword FROM LOGIN_INFO, EMPLOYEE WHERE LOGIN_INFO.employee_id = '" + EmployeeIdTB.Text + "' AND username = '" + UsernameTB.Text + "' AND userpassword = '" + PasswordTB.Text + "'";
 
                 _sqlCommand = new SqlCommand(cmd, _sqlConnection);
                 _sqlReader = _sqlCommand.ExecuteReader();

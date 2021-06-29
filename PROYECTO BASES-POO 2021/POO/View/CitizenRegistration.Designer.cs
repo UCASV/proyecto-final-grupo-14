@@ -43,7 +43,6 @@ namespace COVIDVACCSYSTEM.View
             this.FirstNameTB = new System.Windows.Forms.TextBox();
             this.LastNameTB = new System.Windows.Forms.TextBox();
             this.BirthdayDTP = new System.Windows.Forms.DateTimePicker();
-            this.DepartmentCB = new System.Windows.Forms.ComboBox();
             this.CityCB = new System.Windows.Forms.ComboBox();
             this.EmailTB = new System.Windows.Forms.TextBox();
             this.PhoneNumberTB = new System.Windows.Forms.TextBox();
@@ -184,21 +183,11 @@ namespace COVIDVACCSYSTEM.View
             this.BirthdayDTP.Size = new System.Drawing.Size(250, 28);
             this.BirthdayDTP.TabIndex = 10;
             // 
-            // DepartmentCB
-            // 
-            this.DepartmentCB.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.DepartmentCB.FormattingEnabled = true;
-            this.DepartmentCB.Location = new System.Drawing.Point(448, 238);
-            this.DepartmentCB.Name = "DepartmentCB";
-            this.DepartmentCB.Size = new System.Drawing.Size(250, 29);
-            this.DepartmentCB.TabIndex = 11;
-            this.DepartmentCB.Text = "Departamento";
-            // 
             // CityCB
             // 
             this.CityCB.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.CityCB.FormattingEnabled = true;
-            this.CityCB.Location = new System.Drawing.Point(448, 268);
+            this.CityCB.Location = new System.Drawing.Point(448, 244);
             this.CityCB.Name = "CityCB";
             this.CityCB.Size = new System.Drawing.Size(250, 29);
             this.CityCB.TabIndex = 12;
@@ -315,7 +304,6 @@ namespace COVIDVACCSYSTEM.View
             this.Controls.Add(this.PhoneNumberTB);
             this.Controls.Add(this.EmailTB);
             this.Controls.Add(this.CityCB);
-            this.Controls.Add(this.DepartmentCB);
             this.Controls.Add(this.BirthdayDTP);
             this.Controls.Add(this.LastNameTB);
             this.Controls.Add(this.FirstNameTB);
@@ -339,7 +327,7 @@ namespace COVIDVACCSYSTEM.View
 
         private System.Windows.Forms.ListBox ailmentLB;
 
-        private System.Windows.Forms.ListBox listBox1;
+        
 
         private System.Windows.Forms.TextBox DuiTB;
         private System.Windows.Forms.Label duiLbl;
@@ -356,7 +344,6 @@ namespace COVIDVACCSYSTEM.View
         private System.Windows.Forms.TextBox EmailTB;
         private System.Windows.Forms.TextBox PhoneNumberTB;
 
-        private System.Windows.Forms.ComboBox DepartmentCB;
         private System.Windows.Forms.ComboBox CityCB;
 
         private System.Windows.Forms.DateTimePicker BirthdayDTP;
