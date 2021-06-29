@@ -38,12 +38,7 @@ _Para ejecutar el proyecto necesitas:_
 * .NET CORE 5.0
 * Paquete nuget: Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.SqlServer, Microsoft.EntityFrameworkCore.Design
 
-💡 Clonar el proyecto en tu computadora.
-Por ejemplo, con comandos de GIT BASH
-
-```
-git clone https://github.com/UCASV/proyecto-final-grupo-14
-```
+💡 Descarga [SINAVACC-19](https://github.com/UCASV/proyecto-final-grupo-14/releases/tag/v1.0) - _contiene los archivos que necesitas para ejecutar el proyecto_
 
 💡 Abre en el SSMS el archivo COVIDVACCDB.script y ejecutalo
 
