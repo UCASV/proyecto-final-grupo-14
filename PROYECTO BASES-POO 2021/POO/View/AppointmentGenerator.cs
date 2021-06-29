@@ -64,33 +64,20 @@ namespace COVIDVACCSYSTEM.View
                     int minutes = random.Next(maxMinutes);
                     TimeSpan time = start.Add(TimeSpan.FromMinutes(minutes));
 
-<<<<<<< HEAD:PROYECTO BASES-POO 2021/Programación Orientada a Objetos/View/AppointmentGenerator.cs
-                   VaccinationAppointment Firstapp = new VaccinationAppointment
-                {
-=======
 
                     Random rnd = new Random();
                     int cabinid = rnd.Next(1, 42);
 
 
->>>>>>> 926cc24f155738f3e565e63fb34e7c10e36e738c:POO/View/AppointmentGenerator.cs
 
 
                     VaccinationAppointment Firstapp = new VaccinationAppointment
                     {
 
-<<<<<<< HEAD:PROYECTO BASES-POO 2021/Programación Orientada a Objetos/View/AppointmentGenerator.cs
-                };
-               VaccApp.Create(Firstapp);
-               
-               VaccinationAppointment Secondapp = new VaccinationAppointment
-               {
-=======
                         AppDate = DateVaccine,
                         AppTime = time,
                         CabinId = cabinid,
                         CitizenId = DUITB.Text,
->>>>>>> 926cc24f155738f3e565e63fb34e7c10e36e738c:POO/View/AppointmentGenerator.cs
 
 
                     };
@@ -111,11 +98,6 @@ namespace COVIDVACCSYSTEM.View
                         "CITA",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-<<<<<<< HEAD:PROYECTO BASES-POO 2021/Programación Orientada a Objetos/View/AppointmentGenerator.cs
-        }
-      }
-  } 
-=======
                 }
                 else
                 {
@@ -129,5 +111,6 @@ namespace COVIDVACCSYSTEM.View
 
     }
 } 
->>>>>>> 926cc24f155738f3e565e63fb34e7c10e36e738c:POO/View/AppointmentGenerator.cs
+
+
 
